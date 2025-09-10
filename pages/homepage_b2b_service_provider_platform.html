@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECHSHEQ - Your Trusted Global Business Extension | B2B Services Sri Lanka</title>
+    <meta name="description" content="Scale your business with TECHSHEQ's time-zone aligned services from Sri Lanka. Software development, IT support, and business services for global companies." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftechsheqb1662back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-slate-700/50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4"/>
+                        </svg>
+                        <span class="text-xl font-bold text-text-primary">TECHSHEQ</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button class="text-text-secondary hover:text-text-primary transition-colors duration-200 flex items-center space-x-1">
+                            <span>Services</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <!-- Mega Menu -->
+                        <div class="absolute top-full left-0 mt-2 w-96 bg-surface rounded-xl shadow-strong border border-slate-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <div class="p-6">
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 class="text-sm font-semibold text-primary mb-3">Software Development</h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="services_overview_two_pillar_architecture.html" class="text-text-secondary hover:text-text-primary transition-colors">Website Development</a></li>
+                                            <li><a href="services_overview_two_pillar_architecture.html" class="text-text-secondary hover:text-text-primary transition-colors">Web & Mobile Apps</a></li>
+                                            <li><a href="managed_it_services_flagship_service_detail.html" class="text-text-secondary hover:text-text-primary transition-colors">Managed IT Services</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-sm font-semibold text-accent mb-3">Business Support</h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="services_overview_two_pillar_architecture.html" class="text-text-secondary hover:text-text-primary transition-colors">HR Services</a></li>
+                                            <li><a href="services_overview_two_pillar_architecture.html" class="text-text-secondary hover:text-text-primary transition-colors">Administration</a></li>
+                                            <li><a href="services_overview_two_pillar_architecture.html" class="text-text-secondary hover:text-text-primary transition-colors">Finance Services</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="industries_sector_specific_solutions.html" class="text-text-secondary hover:text-text-primary transition-colors duration-200">Industries</a>
+                    <a href="about_sri_lankan_business_advantage.html" class="text-text-secondary hover:text-text-primary transition-colors duration-200">About</a>
+                    
+                    <!-- Time Zone Widget -->
+                    <div class="flex items-center space-x-2 px-3 py-1 bg-surface rounded-lg border border-slate-700/50">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                        <span class="text-sm text-text-secondary">Sri Lanka:</span>
+                        <span class="text-sm font-semibold text-text-primary" id="sri-lanka-time">8:50 PM</span>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="contact_discovery_call_booking.html" class="btn-primary">Book Discovery Call</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-surface rounded-lg mt-2 border border-slate-700/50">
+                    <a href="services_overview_two_pillar_architecture.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">Services</a>
+                    <a href="industries_sector_specific_solutions.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">Industries</a>
+                    <a href="about_sri_lankan_business_advantage.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">About</a>
+                    <div class="px-3 py-2">
+                        <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center">Book Discovery Call</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #315CAA 0%, transparent 50%), radial-gradient(circle at 75% 75%, #22C55E 0%, transparent 50%);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-up">
+                        Your Trusted
+                        <span class="text-primary block">Global Business</span>
+                        <span class="text-accent">Extension</span>
+                    </h1>
+                    <p class="text-xl text-text-secondary mb-8 max-w-2xl animate-fade-up" style="animation-delay: 200ms;">
+                        Scale your operations with time-zone aligned services from Sri Lanka. Cost-effective excellence in software development and business support.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style="animation-delay: 400ms;">
+                        <a href="contact_discovery_call_booking.html" class="btn-primary text-center">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            Book Discovery Call
+                        </a>
+                        <button class="btn-secondary text-center" onclick="showROICalculator()">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                            Calculate Your Savings
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 flex flex-wrap justify-center lg:justify-start gap-8 animate-fade-up" style="animation-delay: 600ms;">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">8+</div>
+                            <div class="text-sm text-text-secondary">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent">95%</div>
+                            <div class="text-sm text-text-secondary">Client Retention</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">24/7</div>
+                            <div class="text-sm text-text-secondary">Support Coverage</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative animate-fade-up" style="animation-delay: 300ms;">
+                    <div class="relative rounded-2xl overflow-hidden shadow-strong">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Professional Sri Lankan team working during international business hours" class="w-full h-96 object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        
+                        <!-- Overlay with Time Zone Info -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm rounded-lg p-4 border border-slate-700/50">
+                            <div class="grid grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <div class="text-xs text-text-secondary">New York</div>
+                                    <div class="font-semibold text-sm" id="ny-time">10:20 AM</div>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-accent">Sri Lanka</div>
+                                    <div class="font-semibold text-sm text-accent" id="lk-time">8:50 PM</div>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-text-secondary">Sydney</div>
+                                    <div class="font-semibold text-sm" id="syd-time">12:20 AM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="py-20 bg-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Two-Pillar Service Architecture</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Comprehensive solutions spanning technical excellence and business operations support
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Software Development Pillar -->
+                <div class="group card hover:shadow-glow transition-all duration-300 cursor-pointer" onclick="window.location.href='services_overview_two_pillar_architecture.html'">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary">Software Development</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                            <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold">Website Development</h4>
+                                <p class="text-sm text-text-secondary">Modern, responsive websites built with latest technologies</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                            <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold">Web & Mobile Applications</h4>
+                                <p class="text-sm text-text-secondary">Cross-platform solutions for web and mobile</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                            <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold">Managed IT & Cloud Services</h4>
+                                <p class="text-sm text-text-secondary">24/7 infrastructure management and cloud solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Support Pillar -->
+                <div class="group card hover:shadow-glow transition-all duration-300 cursor-pointer" onclick="window.location.href='services_overview_two_pillar_architecture.html'">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-8a2 2 0 00-2 2v2m12 0H4m12 0a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">Business Support</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                            <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold">HR Services</h4>
+                                <p class="text-sm text-text-secondary">Recruitment, onboarding, and HR administration</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                            <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold">Administration</h4>
+                                <p class="text-sm text-text-secondary">Virtual assistance and administrative support</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                            <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-semibold">Finance Services</h4>
+                                <p class="text-sm text-text-secondary">Bookkeeping, accounting, and financial reporting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Why Choose TECHSHEQ</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Strategic advantages that make us your ideal business extension partner
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Time Zone Alignment -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Perfect Time-Zone Alignment</h3>
+                    <p class="text-text-secondary mb-4">Work seamlessly across US, UK, and Australian business hours with our strategic Sri Lankan location.</p>
+                    <div class="text-primary font-semibold">UTC +5:30 Advantage</div>
+                </div>
+
+                <!-- Cost Effectiveness -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cost-Effective Excellence</h3>
+                    <p class="text-text-secondary mb-4">Reduce operational costs by up to 60% without compromising on quality or service standards.</p>
+                    <div class="text-accent font-semibold">Up to 60% Savings</div>
+                </div>
+
+                <!-- Security & Compliance -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Security-First Approach</h3>
+                    <p class="text-text-secondary mb-4">ISO 27001 certified processes with enterprise-grade security and compliance standards.</p>
+                    <div class="text-primary font-semibold">ISO 27001 Certified</div>
+                </div>
+
+                <!-- Cultural Compatibility -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cultural Fluency</h3>
+                    <p class="text-text-secondary mb-4">English-native communication with deep understanding of Western business practices and culture.</p>
+                    <div class="text-accent font-semibold">Native English</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Time Zone Coverage Map -->
+    <section class="py-20 bg-surface/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Global Time-Zone Coverage</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Real-time business hours alignment across major international markets
+                </p>
+            </div>
+
+            <div class="card max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Americas -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Americas</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">New York:</span>
+                                <span class="font-semibold" id="ny-time-2">10:20 AM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Los Angeles:</span>
+                                <span class="font-semibold" id="la-time">7:20 AM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Toronto:</span>
+                                <span class="font-semibold" id="tor-time">10:20 AM</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
+                            Business Hours Active
+                        </div>
+                    </div>
+
+                    <!-- Europe/Middle East -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Europe & ME</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">London:</span>
+                                <span class="font-semibold" id="lon-time">3:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Dubai:</span>
+                                <span class="font-semibold" id="dub-time">7:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Frankfurt:</span>
+                                <span class="font-semibold" id="fra-time">4:20 PM</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
+                            Business Hours Active
+                        </div>
+                    </div>
+
+                    <!-- Asia Pacific -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Asia Pacific</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Sydney:</span>
+                                <span class="font-semibold" id="syd-time-2">12:20 AM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Singapore:</span>
+                                <span class="font-semibold" id="sin-time">11:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-accent font-semibold">Sri Lanka:</span>
+                                <span class="font-semibold text-accent" id="lk-time-2">8:50 PM</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold">
+                            Our Location
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies Showcase -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Enterprise-Grade Tools & Technologies</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Certified expertise in industry-leading platforms and technologies
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- AWS -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
+                    <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="AWS Cloud Services" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/01/30/06/42/typing-5962596_1280.jpg'; this.onerror=null;" />
+                    <h4 class="font-semibold text-sm">AWS</h4>
+                    <p class="text-xs text-text-secondary mt-1">Certified Partner</p>
+                </div>
+
+                <!-- Microsoft -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
+                    <img src="https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Microsoft Technologies" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=2939&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                    <h4 class="font-semibold text-sm">Microsoft</h4>
+                    <p class="text-xs text-text-secondary mt-1">Gold Partner</p>
+                </div>
+
+                <!-- Google Cloud -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
+                    <img src="https://images.pixabay.com/photo/2015/05/19/07/44/browser-773215_1280.png" alt="Google Cloud Platform" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    <h4 class="font-semibold text-sm">Google Cloud</h4>
+                    <p class="text-xs text-text-secondary mt-1">Certified</p>
+                </div>
+
+                <!-- Docker -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
+                    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2906&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Docker Containerization" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg'; this.onerror=null;" />
+                    <h4 class="font-semibold text-sm">Docker</h4>
+                    <p class="text-xs text-text-secondary mt-1">Containerization</p>
+                </div>
+
+                <!-- Kubernetes -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
+                    <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Kubernetes Orchestration" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2925&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                    <h4 class="font-semibold text-sm">Kubernetes</h4>
+                    <p class="text-xs text-text-secondary mt-1">Orchestration</p>
+                </div>
+
+                <!-- Security -->
+                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
+                    <img src="https://images.pixabay.com/photo/2018/07/18/19/12/cyber-security-3547389_1280.jpg" alt="Security Certifications" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    <h4 class="font-semibold text-sm">Security</h4>
+                    <p class="text-xs text-text-secondary mt-1">ISO 27001</p>
+                </div>
+            </div>
+
+            <!-- Certification Badges -->
+            <div class="mt-12 flex flex-wrap justify-center gap-6">
+                <div class="flex items-center space-x-2 px-4 py-2 bg-surface rounded-lg border border-slate-700/50">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                    <span class="text-sm font-semibold">ISO 27001 Certified</span>
+                </div>
+                <div class="flex items-center space-x-2 px-4 py-2 bg-surface rounded-lg border border-slate-700/50">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                    <span class="text-sm font-semibold">AWS Certified</span>
+                </div>
+                <div class="flex items-center space-x-2 px-4 py-2 bg-surface rounded-lg border border-slate-700/50">
+                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                    <span class="text-sm font-semibold">GDPR Compliant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary/20 to-accent/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Ready to Scale Your Business?</h2>
+            <p class="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+                Join forward-thinking companies who've already discovered the TECHSHEQ advantage. Let's discuss how we can become your trusted business extension.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact_discovery_call_booking.html" class="btn-primary text-center">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    Book Your Discovery Call
+                </a>
+                <a href="services_overview_two_pillar_architecture.html" class="btn-secondary text-center">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Explore Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4"/>
+                        </svg>
+                        <span class="text-xl font-bold">TECHSHEQ</span>
+                    </div>
+                    <p class="text-text-secondary mb-4 max-w-md">
+                        Your trusted global business extension, delivering cost-effective excellence from Sri Lanka with perfect time-zone alignment.
+                    </p>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                        <span>Sri Lanka Time: <span class="font-semibold text-text-primary" id="footer-time">8:50 PM</span></span>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-text-secondary">
+                        <li><a href="services_overview_two_pillar_architecture.html" class="hover:text-text-primary transition-colors">Software Development</a></li>
+                        <li><a href="managed_it_services_flagship_service_detail.html" class="hover:text-text-primary transition-colors">Managed IT Services</a></li>
+                        <li><a href="services_overview_two_pillar_architecture.html" class="hover:text-text-primary transition-colors">Business Support</a></li>
+                        <li><a href="services_overview_two_pillar_architecture.html" class="hover:text-text-primary transition-colors">HR Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-text-secondary">
+                        <li><a href="about_sri_lankan_business_advantage.html" class="hover:text-text-primary transition-colors">About Us</a></li>
+                        <li><a href="industries_sector_specific_solutions.html" class="hover:text-text-primary transition-colors">Industries</a></li>
+                        <li><a href="contact_discovery_call_booking.html" class="hover:text-text-primary transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-text-primary transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-text-secondary text-sm">© 2025 TECHSHEQ (PVT) LTD. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-text-secondary hover:text-text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-slate-700/50 p-4 md:hidden z-40">
+        <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center">
+            Book Discovery Call
+        </a>
+    </div>
+
+    <!-- ROI Calculator Modal -->
+    <div id="roi-calculator" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-surface rounded-xl max-w-md w-full p-6 border border-slate-700/50">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">ROI Calculator</h3>
+                <button onclick="hideROICalculator()" class="text-text-secondary hover:text-text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Current Annual IT/Business Support Costs (USD)</label>
+                    <input type="number" id="current-costs" class="w-full px-3 py-2 bg-background border border-slate-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="100000" />
+                </div>
+                
+                <div class="bg-background rounded-lg p-4">
+                    <h4 class="font-semibold mb-2">Estimated Savings with TECHSHEQ:</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Annual Savings (60%):</span>
+                            <span class="font-semibold text-accent" id="annual-savings">$60,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">Monthly Savings:</span>
+                            <span class="font-semibold text-accent" id="monthly-savings">$5,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-text-secondary">3-Year Savings:</span>
+                            <span class="font-semibold text-primary" id="three-year-savings">$180,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center">
+                    Discuss Your Savings Potential
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // ROI Calculator functions
+        function showROICalculator() {
+            document.getElementById('roi-calculator').classList.remove('hidden');
+            document.getElementById('roi-calculator').classList.add('flex');
+        }
+
+        function hideROICalculator() {
+            document.getElementById('roi-calculator').classList.add('hidden');
+            document.getElementById('roi-calculator').classList.remove('flex');
+        }
+
+        // ROI Calculator logic
+        document.getElementById('current-costs').addEventListener('input', function() {
+            const currentCosts = parseFloat(this.value) || 0;
+            const annualSavings = currentCosts * 0.6;
+            const monthlySavings = annualSavings / 12;
+            const threeYearSavings = annualSavings * 3;
+
+            document.getElementById('annual-savings').textContent = '$' + annualSavings.toLocaleString();
+            document.getElementById('monthly-savings').textContent = '$' + monthlySavings.toLocaleString();
+            document.getElementById('three-year-savings').textContent = '$' + threeYearSavings.toLocaleString();
+        });
+
+        // Time zone updates (mock implementation)
+        function updateTimes() {
+            const now = new Date();
+            // Mock time updates - in real implementation, these would be calculated based on actual time zones
+            const times = {
+                'sri-lanka-time': '8:50 PM',
+                'ny-time': '10:20 AM',
+                'ny-time-2': '10:20 AM',
+                'la-time': '7:20 AM',
+                'tor-time': '10:20 AM',
+                'lon-time': '3:20 PM',
+                'dub-time': '7:20 PM',
+                'fra-time': '4:20 PM',
+                'syd-time': '12:20 AM',
+                'syd-time-2': '12:20 AM',
+                'sin-time': '11:20 PM',
+                'lk-time': '8:50 PM',
+                'lk-time-2': '8:50 PM',
+                'footer-time': '8:50 PM'
+            };
+
+            Object.keys(times).forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = times[id];
+                }
+            });
+        }
+
+        // Update times every minute
+        updateTimes();
+        setInterval(updateTimes, 60000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
