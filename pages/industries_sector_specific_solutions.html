@@ -1107,13 +1107,13 @@
             Object.keys(times).forEach(id => {
                 const element = document.getElementById(id);
                 if (element) {
-                    element.textContent = times[id];
+                    element.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second:"2-digit"  ,hour12: true, timeZone: 'Asia/Colombo' }) ;
                 }
             });
         }
 
         updateTimes();
-        setInterval(updateTimes, 60000);
+        setInterval(updateTimes, 1000);
 
         // Initialize first tab as active
         document.querySelector('.industry-tab[data-industry="tech-startups"]').click();

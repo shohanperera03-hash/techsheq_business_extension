@@ -969,18 +969,11 @@
         // Time zone updates (mock implementation)
         function updateTimes() {
             const now = new Date();
-            // Mock time updates - in real implementation, these would be calculated based on actual time zones
-            const times = {
-                'sri-lanka-time': '8:50 PM',
-                'sri-lanka-time-booking': '8:50 PM',
-                'current-time': '8:50 PM',
-                'footer-time': '8:50 PM'
-            };
 
             Object.keys(times).forEach(id => {
                 const element = document.getElementById(id);
                 if (element) {
-                    element.textContent = times[id];
+                    element.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second:"2-digit"  ,hour12: true, timeZone: 'Asia/Colombo' }) ;
                 }
             });
 
@@ -1006,7 +999,7 @@
 
         // Update times every minute
         updateTimes();
-        setInterval(updateTimes, 60000);
+        setInterval(updateTimes, 1000);
 
         // Form submission handlers
         document.querySelectorAll('form').forEach(form => {
