@@ -812,14 +812,14 @@
             timeElements.forEach(id => {
                 const element = document.getElementById(id);
                 if (element) {
-                    element.textContent = sriLankaTime;
+                    element.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second:"2-digit"  ,hour12: true, timeZone: 'Asia/Colombo' }) ;
                 }
             });
         }
 
-        // Update times every minute
+        // Update times every second
         updateTimes();
-        setInterval(updateTimes, 60000);
+        setInterval(updateTimes, 1000);
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
