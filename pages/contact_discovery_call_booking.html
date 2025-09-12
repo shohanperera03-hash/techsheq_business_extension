@@ -969,6 +969,10 @@
         // Time zone updates (mock implementation)
         function updateTimes() {
             const now = new Date();
+            const times = {
+                 'sri-lanka-time': '8:50 PM',
+                'footer-time': '8:50 PM',
+            };
 
             Object.keys(times).forEach(id => {
                 const element = document.getElementById(id);
