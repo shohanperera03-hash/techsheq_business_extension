@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TECHSHEQ Business Extension - B2B Service Provider Platform</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/url-config.js"></script>
+    <script src="/js/url-helper.js"></script>
     <style>
         @layer utilities {
             /* Custom animations for the loading screen */
@@ -576,7 +578,9 @@
         
         // Redirect to the homepage after 3 seconds
         setTimeout(function() {
-            window.location.href = 'pages/homepage_b2b_service_provider_platform.html';
+            // Use clean URL configuration
+            const targetUrl = getCleanUrl('pages/homepage_b2b_service_provider_platform.html');
+            window.location.href = targetUrl;
         }, 3000);
         
         // Optional: Add a fallback redirect on page load

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHSHEQ URL Testing</title>
+    <script src="js/url-config.js"></script>
+    <script src="js/url-helper.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        .url-mapping { margin: 10px 0; }
+        .old-url { color: #666; text-decoration: line-through; }
+        .new-url { color: #0066cc; font-weight: bold; }
+        .test-link { display: inline-block; margin: 5px; padding: 10px; background: #f0f0f0; text-decoration: none; border-radius: 4px; }
+        .test-link:hover { background: #e0e0e0; }
+    </style>
+</head>
+<body>
+    <h1>TECHSHEQ URL Testing Page</h1>
+    
+    <div class="test-section">
+        <h2>URL Mappings</h2>
+        <div class="url-mapping">
+            <span class="old-url">pages/homepage_b2b_service_provider_platform.html</span> → 
+            <span class="new-url">/ (or /home)</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/services_overview_two_pillar_architecture.html</span> → 
+            <span class="new-url">/services</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/industries_sector_specific_solutions.html</span> → 
+            <span class="new-url">/industries</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/about_sri_lankan_business_advantage.html</span> → 
+            <span class="new-url">/about</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/contact_discovery_call_booking.html</span> → 
+            <span class="new-url">/contact</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/managed_it_services_flagship_service_detail.html</span> → 
+            <span class="new-url">/managed-it</span>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Links</h2>
+        <a href="pages/homepage_b2b_service_provider_platform.html" class="test-link">Home (Old URL)</a>
+        <a href="pages/services_overview_two_pillar_architecture.html" class="test-link">Services (Old URL)</a>
+        <a href="pages/industries_sector_specific_solutions.html" class="test-link">Industries (Old URL)</a>
+        <a href="pages/about_sri_lankan_business_advantage.html" class="test-link">About (Old URL)</a>
+        <a href="pages/contact_discovery_call_booking.html" class="test-link">Contact (Old URL)</a>
+        <a href="pages/managed_it_services_flagship_service_detail.html" class="test-link">Managed IT (Old URL)</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>Clean URLs (Should work on live domain)</h2>
+        <a href="/" class="test-link">Home (/)</a>
+        <a href="/home" class="test-link">Home (/home)</a>
+        <a href="/services" class="test-link">Services</a>
+        <a href="/industries" class="test-link">Industries</a>
+        <a href="/about" class="test-link">About</a>
+        <a href="/contact" class="test-link">Contact</a>
+        <a href="/managed-it" class="test-link">Managed IT</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>JavaScript URL Helper Test</h2>
+        <p>Open browser console to see URL helper function results:</p>
+        <script>
+            console.log('URL Helper Test Results:');
+            console.log('getCleanUrl("pages/homepage_b2b_service_provider_platform.html"):', getCleanUrl('pages/homepage_b2b_service_provider_platform.html'));
+            console.log('getCleanUrl("pages/contact_discovery_call_booking.html"):', getCleanUrl('pages/contact_discovery_call_booking.html'));
+            console.log('getCleanUrl("pages/services_overview_two_pillar_architecture.html"):', getCleanUrl('pages/services_overview_two_pillar_architecture.html'));
+            console.log('isLiveDomain():', isLiveDomain());
+        </script>
+    </div>
+</body>
+</html>
