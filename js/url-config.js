@@ -10,11 +10,12 @@ const URL_CONFIG = {
     URL_MAPPINGS: {
         // Clean URLs -> Actual file paths
         '/': 'pages/homepage_b2b_service_provider_platform.html',
+        '/home': 'pages/homepage_b2b_service_provider_platform.html',
         '/services': 'pages/services_overview_two_pillar_architecture.html',
         '/industries': 'pages/industries_sector_specific_solutions.html',
         '/about': 'pages/about_sri_lankan_business_advantage.html',
         '/contact': 'pages/contact_discovery_call_booking.html',
-        '/managed-it-services': 'pages/managed_it_services_flagship_service_detail.html'
+        '/managed-it': 'pages/managed_it_services_flagship_service_detail.html'
     },
     
     // Redirect mappings for old URLs
@@ -24,7 +25,7 @@ const URL_CONFIG = {
         'pages/industries_sector_specific_solutions.html': '/industries',
         'pages/about_sri_lankan_business_advantage.html': '/about',
         'pages/contact_discovery_call_booking.html': '/contact',
-        'pages/managed_it_services_flagship_service_detail.html': '/managed-it-services'
+        'pages/managed_it_services_flagship_service_detail.html': '/managed-it'
     }
 };
 
