@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHSHEQ URL Test - Server Configuration</title>
+    <script src="/js/url-redirect.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .success { background: #d4edda; border-color: #c3e6cb; color: #155724; }
+        .warning { background: #fff3cd; border-color: #ffeaa7; color: #856404; }
+        .error { background: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+        .url-mapping { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 4px; }
+        .old-url { color: #666; text-decoration: line-through; }
+        .new-url { color: #0066cc; font-weight: bold; }
+        .test-link { display: inline-block; margin: 5px; padding: 10px 15px; background: #007bff; color: white; text-decoration: none; border-radius: 4px; }
+        .test-link:hover { background: #0056b3; }
+        .status { font-weight: bold; margin: 10px 0; }
+        .instructions { background: #e7f3ff; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>🔧 TECHSHEQ URL Test - Server Configuration</h1>
+    
+    <div class="instructions">
+        <h3>📋 Instructions:</h3>
+        <ol>
+            <li><strong>Upload the .htaccess file</strong> to your web server root directory</li>
+            <li><strong>Upload the url-redirect.js file</strong> to your /js/ directory</li>
+            <li><strong>Test the URLs below</strong> to verify they work correctly</li>
+            <li><strong>Check browser console</strong> for any JavaScript errors</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>🌐 Current URL Status</h2>
+        <div id="current-url-status" class="status">Loading...</div>
+        <div id="redirect-status" class="status">Loading...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔄 URL Mappings</h2>
+        <div class="url-mapping">
+            <span class="old-url">pages/homepage_b2b_service_provider_platform.html</span> → 
+            <span class="new-url">/ (or /home)</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/services_overview_two_pillar_architecture.html</span> → 
+            <span class="new-url">/services</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/industries_sector_specific_solutions.html</span> → 
+            <span class="new-url">/industries</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/about_sri_lankan_business_advantage.html</span> → 
+            <span class="new-url">/about</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/contact_discovery_call_booking.html</span> → 
+            <span class="new-url">/contact</span>
+        </div>
+        <div class="url-mapping">
+            <span class="old-url">pages/managed_it_services_flagship_service_detail.html</span> → 
+            <span class="new-url">/managed-it</span>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🧪 Test Links (Old URLs - Should Redirect)</h2>
+        <a href="pages/homepage_b2b_service_provider_platform.html" class="test-link">Home (Old URL)</a>
+        <a href="pages/services_overview_two_pillar_architecture.html" class="test-link">Services (Old URL)</a>
+        <a href="pages/industries_sector_specific_solutions.html" class="test-link">Industries (Old URL)</a>
+        <a href="pages/about_sri_lankan_business_advantage.html" class="test-link">About (Old URL)</a>
+        <a href="pages/contact_discovery_call_booking.html" class="test-link">Contact (Old URL)</a>
+        <a href="pages/managed_it_services_flagship_service_detail.html" class="test-link">Managed IT (Old URL)</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>✅ Clean URLs (Should Work)</h2>
+        <a href="/" class="test-link">Home (/)</a>
+        <a href="/home" class="test-link">Home (/home)</a>
+        <a href="/services" class="test-link">Services</a>
+        <a href="/industries" class="test-link">Industries</a>
+        <a href="/about" class="test-link">About</a>
+        <a href="/contact" class="test-link">Contact</a>
+        <a href="/managed-it" class="test-link">Managed IT</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔍 JavaScript URL Redirect Test</h2>
+        <div id="js-test-results">Loading...</div>
+    </div>
+    
+    <script>
+        // Test JavaScript URL redirect functionality
+        function runTests() {
+            const currentUrl = window.location.href;
+            const currentPath = window.location.pathname;
+            const isLive = window.location.hostname === 'www.techsheq.com' || window.location.hostname === 'techsheq.com';
+            
+            // Update current URL status
+            document.getElementById('current-url-status').innerHTML = 
+                `Current URL: <code>${currentUrl}</code>`;
+            
+            // Check if redirect is needed
+            const needsRedirect = window.TECHSHEQ_URL_REDIRECT ? window.TECHSHEQ_URL_REDIRECT.needsRedirect() : false;
+            const redirectStatus = document.getElementById('redirect-status');
+            
+            if (needsRedirect) {
+                redirectStatus.innerHTML = `🔄 Redirect needed to: <code>${needsRedirect}</code>`;
+                redirectStatus.className = 'status warning';
+            } else if (isLive) {
+                redirectStatus.innerHTML = '✅ Clean URL detected - no redirect needed';
+                redirectStatus.className = 'status success';
+            } else {
+                redirectStatus.innerHTML = 'ℹ️ Local development - redirects disabled';
+                redirectStatus.className = 'status';
+            }
+            
+            // Test JavaScript functionality
+            const jsResults = document.getElementById('js-test-results');
+            let results = '<h4>JavaScript Test Results:</h4>';
+            
+            if (window.TECHSHEQ_URL_REDIRECT) {
+                results += '<p>✅ URL redirect script loaded successfully</p>';
+                results += `<p>✅ Live domain detection: ${isLive ? 'Yes' : 'No'}</p>`;
+                results += `<p>✅ Needs redirect: ${needsRedirect ? 'Yes' : 'No'}</p>`;
+                
+                if (needsRedirect) {
+                    results += '<p>🔄 Performing redirect...</p>';
+                    window.TECHSHEQ_URL_REDIRECT.performRedirect(needsRedirect);
+                }
+            } else {
+                results += '<p>❌ URL redirect script not loaded</p>';
+            }
+            
+            jsResults.innerHTML = results;
+        }
+        
+        // Run tests when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', runTests);
+        } else {
+            runTests();
+        }
+    </script>
+</body>
+</html>
