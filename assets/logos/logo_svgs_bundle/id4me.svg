@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+  <title>id4me.svg</title>
+  <desc>Wrapper SVG that references the official logo via an embedded <image>. Source: ID4ME — Official Media Kit</desc>
+  <rect width="100%" height="100%" fill="white"/>
+  <image href="https://id4me.org/media-kit/ID4me_Logo.svg" x="50" y="25" width="900" height="250" preserveAspectRatio="xMidYMid meet"/>
+</svg>

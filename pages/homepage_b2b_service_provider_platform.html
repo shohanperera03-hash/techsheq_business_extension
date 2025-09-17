@@ -16,13 +16,9 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center space-x-2">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
-                            <circle cx="16" cy="16" r="4"/>
-                        </svg>
-                        <span class="text-xl font-bold text-text-primary">TECHSHEQ</span>
+                <div class="flex-shrink-0 pl-0">
+                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center">
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </a>
                 </div>
 
@@ -79,21 +75,36 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2" id="mobile-menu-button">
+                <button class="md:hidden mobile-menu-button touch-feedback" id="mobile-menu-button" aria-label="Open mobile menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
 
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-nav-overlay md:hidden" id="mobile-menu-overlay"></div>
+            
             <!-- Mobile Menu -->
-            <div class="md:hidden hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-surface rounded-lg mt-2 border border-slate-700/50">
-                    <a href="services_overview_two_pillar_architecture.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">Services</a>
-                    <a href="industries_sector_specific_solutions.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">Industries</a>
-                    <a href="about_sri_lankan_business_advantage.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">About</a>
-                    <div class="px-3 py-2">
-                        <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center">Book Discovery Call</a>
+            <div class="mobile-nav-menu md:hidden" id="mobile-menu">
+                <div class="flex flex-col h-full">
+                    <!-- Close Button -->
+                    <button class="self-end p-4 touch-feedback" id="mobile-menu-close" aria-label="Close mobile menu">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Navigation Links -->
+                    <nav class="flex-1 px-6 space-y-4">
+                        <a href="services_overview_two_pillar_architecture.html" class="block py-4 text-lg text-white hover:text-accent transition-colors border-b border-slate-600">Services</a>
+                        <a href="industries_sector_specific_solutions.html" class="block py-4 text-lg text-white hover:text-accent transition-colors border-b border-slate-600">Industries</a>
+                        <a href="about_sri_lankan_business_advantage.html" class="block py-4 text-lg text-white hover:text-accent transition-colors border-b border-slate-600">About</a>
+                    </nav>
+                    
+                    <!-- CTA Button -->
+                    <div class="px-6 pb-6">
+                        <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center touch-feedback">Book Discovery Call</a>
                     </div>
                 </div>
             </div>
@@ -108,27 +119,27 @@
         </div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <!-- Hero Content -->
                 <div class="text-center lg:text-left">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-up">
+                    <h1 class="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-up leading-tight">
                         Your Trusted
                         <span class="text-primary block">Global Business</span>
                         <span class="text-accent">Extension</span>
                     </h1>
-                    <p class="text-xl text-text-secondary mb-8 max-w-2xl animate-fade-up" style="animation-delay: 200ms;">
+                    <p class="text-lg xs:text-xl text-text-secondary mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-up" style="animation-delay: 200ms;">
                         Scale your operations with time-zone aligned services from Sri Lanka. Cost-effective excellence in software development and business support.
                     </p>
                     
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style="animation-delay: 400ms;">
-                        <a href="contact_discovery_call_booking.html" class="btn-primary text-center">
+                        <a href="contact_discovery_call_booking.html" class="btn-primary text-center touch-feedback">
                             <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                             </svg>
                             Book Discovery Call
                         </a>
-                        <button class="btn-secondary text-center" onclick="showROICalculator()">
+                        <button class="btn-secondary text-center touch-feedback" onclick="showROICalculator()">
                             <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                             </svg>
@@ -162,7 +173,7 @@
                         <div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm rounded-lg p-4 border border-slate-700/50">
                             <div class="grid grid-cols-3 gap-4 text-center">
                                 <div>
-                                    <div class="text-xs text-text-secondary">New York</div>
+                                    <div class="text-xs text-text-secondary">Australia</div>
                                     <div class="font-semibold text-sm" id="ny-time">10:20 AM</div>
                                 </div>
                                 <div>
@@ -170,7 +181,7 @@
                                     <div class="font-semibold text-sm text-accent" id="lk-time">8:50 PM</div>
                                 </div>
                                 <div>
-                                    <div class="text-xs text-text-secondary">Sydney</div>
+                                    <div class="text-xs text-text-secondary">UK</div>
                                     <div class="font-semibold text-sm" id="syd-time">12:20 AM</div>
                                 </div>
                             </div>
@@ -327,8 +338,8 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Security-First Approach</h3>
-                    <p class="text-text-secondary mb-4">ISO 27001 certified processes with enterprise-grade security and compliance standards.</p>
-                    <div class="text-primary font-semibold">ISO 27001 Certified</div>
+                    <p class="text-text-secondary mb-4">A proactive approach to safeguarding data with best-in-class security measures.</p>
+                    <div class="text-primary font-semibold">Data Protection Focused</div>
                 </div>
 
                 <!-- Cultural Compatibility -->
@@ -356,8 +367,89 @@
                 </p>
             </div>
 
-            <div class="card max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8">
+            <div class="card max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Asia -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Asia</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-accent font-semibold">Colombo:</span>
+                                <span class="font-semibold text-accent" id="col-time">8:50 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Singapore:</span>
+                                <span class="font-semibold" id="sin-time">11:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Bangkok:</span>
+                                <span class="font-semibold" id="bkk-time">10:20 PM</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
+                            Our Location
+                        </div>
+                    </div>
+
+                    <!-- Gulf -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Gulf</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Dubai:</span>
+                                <span class="font-semibold" id="dub-time">7:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Doha:</span>
+                                <span class="font-semibold" id="doh-time">7:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Riyadh:</span>
+                                <span class="font-semibold" id="riy-time">6:20 PM</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold">
+                            Business Hours Active
+                        </div>
+                    </div>
+
+                    <!-- Europe -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Europe</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">London:</span>
+                                <span class="font-semibold" id="lon-time">3:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Frankfurt:</span>
+                                <span class="font-semibold" id="fra-time">4:20 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Paris:</span>
+                                <span class="font-semibold" id="par-time">4:20 PM</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold">
+                            Business Hours Active
+                        </div>
+                    </div>
+
                     <!-- Americas -->
                     <div class="text-center">
                         <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -372,70 +464,16 @@
                                 <span class="font-semibold" id="ny-time-2">10:20 AM</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-text-secondary">Los Angeles:</span>
-                                <span class="font-semibold" id="la-time">7:20 AM</span>
+                                <span class="text-text-secondary">Chicago:</span>
+                                <span class="font-semibold" id="chi-time">9:20 AM</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-text-secondary">Toronto:</span>
-                                <span class="font-semibold" id="tor-time">10:20 AM</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
-                            Business Hours Active
-                        </div>
-                    </div>
-
-                    <!-- Europe/Middle East -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Europe & ME</h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-text-secondary">London:</span>
-                                <span class="font-semibold" id="lon-time">3:20 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-text-secondary">Dubai:</span>
-                                <span class="font-semibold" id="dub-time">7:20 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-text-secondary">Frankfurt:</span>
-                                <span class="font-semibold" id="fra-time">4:20 PM</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
-                            Business Hours Active
-                        </div>
-                    </div>
-
-                    <!-- Asia Pacific -->
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Asia Pacific</h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-text-secondary">Sydney:</span>
-                                <span class="font-semibold" id="syd-time-2">12:20 AM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-text-secondary">Singapore:</span>
-                                <span class="font-semibold" id="sin-time">11:20 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-accent font-semibold">Sri Lanka:</span>
-                                <span class="font-semibold text-accent" id="lk-time-2">8:50 PM</span>
+                                <span class="text-text-secondary">San Francisco:</span>
+                                <span class="font-semibold" id="sf-time">7:20 AM</span>
                             </div>
                         </div>
                         <div class="mt-4 px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-semibold">
-                            Our Location
+                            Business Hours Active
                         </div>
                     </div>
                 </div>
@@ -447,77 +485,297 @@
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Enterprise-Grade Tools & Technologies</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Technologies We Use</h2>
                 <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-                    Certified expertise in industry-leading platforms and technologies
+                    Practical experience with modern, industry-leading platforms and tools
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <!-- Cloud & DevOps -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-text-primary mb-6">Cloud & DevOps</h3>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <!-- AWS -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
-                    <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="AWS Cloud Services" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/01/30/06/42/typing-5962596_1280.jpg'; this.onerror=null;" />
-                    <h4 class="font-semibold text-sm">AWS</h4>
-                    <p class="text-xs text-text-secondary mt-1">Certified Partner</p>
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="AWS – Cloud Infrastructure">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Cloud Services" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/01/30/06/42/typing-5962596_1280.jpg'; this.onerror=null;" />
+                        <h4 class="font-semibold text-sm text-text-primary">AWS</h4>
+                        <p class="text-xs text-text-secondary mt-1">Cloud Infrastructure</p>
                 </div>
 
-                <!-- Microsoft -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
-                    <img src="https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Microsoft Technologies" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=2939&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
-                    <h4 class="font-semibold text-sm">Microsoft</h4>
-                    <p class="text-xs text-text-secondary mt-1">Gold Partner</p>
+                    <!-- Azure -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Azure – Cloud Infrastructure">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure_Logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">☁️</span>
                 </div>
-
-                <!-- Google Cloud -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
-                    <img src="https://images.pixabay.com/photo/2015/05/19/07/44/browser-773215_1280.png" alt="Google Cloud Platform" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
-                    <h4 class="font-semibold text-sm">Google Cloud</h4>
-                    <p class="text-xs text-text-secondary mt-1">Certified</p>
+                        <h4 class="font-semibold text-sm text-text-primary">Azure</h4>
+                        <p class="text-xs text-text-secondary mt-1">Cloud Infrastructure</p>
                 </div>
 
                 <!-- Docker -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
-                    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2906&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Docker Containerization" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg'; this.onerror=null;" />
-                    <h4 class="font-semibold text-sm">Docker</h4>
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Docker – Containerization">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/docker.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🐳</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Docker</h4>
                     <p class="text-xs text-text-secondary mt-1">Containerization</p>
                 </div>
 
                 <!-- Kubernetes -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
-                    <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Kubernetes Orchestration" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2925&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
-                    <h4 class="font-semibold text-sm">Kubernetes</h4>
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Kubernetes – Orchestration">
+                        <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes Orchestration" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.png'; this.onerror=null;" />
+                        <h4 class="font-semibold text-sm text-text-primary">Kubernetes</h4>
                     <p class="text-xs text-text-secondary mt-1">Orchestration</p>
                 </div>
 
-                <!-- Security -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4">
-                    <img src="https://images.pixabay.com/photo/2018/07/18/19/12/cyber-security-3547389_1280.jpg" alt="Security Certifications" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
-                    <h4 class="font-semibold text-sm">Security</h4>
-                    <p class="text-xs text-text-secondary mt-1">ISO 27001</p>
+                    <!-- Linux -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Linux – Operating System">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux Operating System" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg'; this.onerror=null;" />
+                        <h4 class="font-semibold text-sm text-text-primary">Linux</h4>
+                        <p class="text-xs text-text-secondary mt-1">Operating System</p>
+                </div>
+
+                    <!-- GitHub -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="GitHub – Source Control & CI">
+                        <img src="https://images.seeklogo.com/logo-png/30/1/github-logo-png_seeklogo-304612.png" alt="GitHub" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🐙</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">GitHub</h4>
+                        <p class="text-xs text-text-secondary mt-1">Source Control & CI</p>
+            </div>
+
+                    <!-- GitLab -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="GitLab – Source Control & CI">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://about.gitlab.com/images/press/logo/svg/gitlab-logo-700.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🦊</span>
+                </div>
+                        <h4 class="font-semibold text-sm text-text-primary">GitLab</h4>
+                        <p class="text-xs text-text-secondary mt-1">Source Control & CI</p>
+                </div>
+
+                    <!-- Grafana -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Grafana – Monitoring & Visualization">
+                        <img src="https://images.seeklogo.com/logo-png/33/2/grafana-logo-png_seeklogo-336117.png" alt="Grafana" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/grafana.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">📊</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Grafana</h4>
+                        <p class="text-xs text-text-secondary mt-1">Monitoring & Visualization</p>
+                    </div>
+
+                    <!-- Nagios -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Nagios – Infrastructure Monitoring">
+                        <img src="https://images.seeklogo.com/logo-png/34/1/nagios-logo-png_seeklogo-342383.png" alt="Nagios" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/nagios.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🔍</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Nagios</h4>
+                        <p class="text-xs text-text-secondary mt-1">Infrastructure Monitoring</p>
+                    </div>
+
+                    <!-- Prometheus -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Prometheus – Metrics & Alerting">
+                        <img src="https://images.seeklogo.com/logo-png/27/1/prometheus-logo-png_seeklogo-273822.png" alt="Prometheus" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/prometheus.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">⚡</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Prometheus</h4>
+                        <p class="text-xs text-text-secondary mt-1">Metrics & Alerting</p>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- Certification Badges -->
-            <div class="mt-12 flex flex-wrap justify-center gap-6">
-                <div class="flex items-center space-x-2 px-4 py-2 bg-surface rounded-lg border border-slate-700/50">
-                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                    </svg>
-                    <span class="text-sm font-semibold">ISO 27001 Certified</span>
-                </div>
-                <div class="flex items-center space-x-2 px-4 py-2 bg-surface rounded-lg border border-slate-700/50">
-                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                    </svg>
-                    <span class="text-sm font-semibold">AWS Certified</span>
-                </div>
-                <div class="flex items-center space-x-2 px-4 py-2 bg-surface rounded-lg border border-slate-700/50">
-                    <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                    </svg>
-                    <span class="text-sm font-semibold">GDPR Compliant</span>
+            <!-- Project & Productivity -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-text-primary mb-6">Project & Productivity</h3>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- Monday.com -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Monday.com – Project Management">
+                        <img src="https://images.seeklogo.com/logo-png/39/1/monday-logo-png_seeklogo-394606.png" alt="Monday.com" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/mondaydotcom.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">📅</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Monday.com</h4>
+                        <p class="text-xs text-text-secondary mt-1">Project Management</p>
+                    </div>
+
+                    <!-- Asana -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Asana – Project Management">
+                        <img src="https://images.seeklogo.com/logo-png/52/1/asana-logo-png_seeklogo-525124.png" alt="Asana" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5a/Asana_logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">📋</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Asana</h4>
+                        <p class="text-xs text-text-secondary mt-1">Project Management</p>
+                    </div>
+
+                    <!-- ClickUp -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="ClickUp – Project Management">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/clickup.svg" alt="ClickUp" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://worldvectorlogo.com/logo/clickup.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">⚡</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">ClickUp</h4>
+                        <p class="text-xs text-text-secondary mt-1">Project Management</p>
+                    </div>
+
+                    <!-- Jira -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Jira – Issue Tracking">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/85/Jira_Logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🎫</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Jira</h4>
+                        <p class="text-xs text-text-secondary mt-1">Issue Tracking</p>
+                    </div>
+
+                    <!-- CAKE.com -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="CAKE.com – Time & Scheduling">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfjvQZHnbMxmHmzcFIM-Xo73yzctzDv1eTnB5QU8OwROaLfFok-vnuiNIYUNQiTu2euhI&usqp=CAU" alt="CAKE.com" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/cake.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🍰</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">CAKE.com</h4>
+                        <p class="text-xs text-text-secondary mt-1">Time & Scheduling</p>
+                    </div>
+
+                    <!-- Notion -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Notion – Knowledge & Docs">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg'; this.onerror=null;" />
+                        <h4 class="font-semibold text-sm text-text-primary">Notion</h4>
+                        <p class="text-xs text-text-secondary mt-1">Knowledge & Docs</p>
+                    </div>
+
+                    <!-- Atlassian -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Atlassian – Tool Suite">
+                        <img src="https://images.seeklogo.com/logo-png/32/1/atlassian-logo-png_seeklogo-326273.png" alt="Atlassian" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Atlassian-logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🔧</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Atlassian</h4>
+                        <p class="text-xs text-text-secondary mt-1">Tool Suite</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Accounting & Timekeeping -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-text-primary mb-6">Accounting & Timekeeping</h3>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- Xero -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Xero – Accounting">
+                        <img src="https://en.wikipedia.org/wiki/Special:FilePath/Xero_software_logo.svg" alt="Xero Accounting" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3f/Xero_software_logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">💰</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Xero</h4>
+                        <p class="text-xs text-text-secondary mt-1">Accounting</p>
+                    </div>
+
+                    <!-- Harvest -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Harvest – Time Tracking & Invoicing">
+                        <img src="https://images.seeklogo.com/logo-png/48/1/harvest-logo-png_seeklogo-485567.png" alt="Harvest" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://worldvectorlogo.com/logo/harvest-1.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">⏰</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Harvest</h4>
+                        <p class="text-xs text-text-secondary mt-1">Time Tracking & Invoicing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CRM & Sales Ops -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-text-primary mb-6">CRM & Sales Ops</h3>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- Salesforce -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Salesforce – CRM">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" alt="Salesforce" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Salesforce.com%20logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">💼</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Salesforce</h4>
+                        <p class="text-xs text-text-secondary mt-1">CRM</p>
+                    </div>
+
+                    <!-- Pricefinder -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Pricefinder – Real Estate Data">
+                        <img src="https://images.seeklogo.com/logo-png/33/1/pricefinder-logo-png_seeklogo-339193.png" alt="Pricefinder" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/pricefinder.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🏘️</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">Pricefinder</h4>
+                        <p class="text-xs text-text-secondary mt-1">Real Estate Data</p>
+                    </div>
+
+                    <!-- VaultRE -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="VaultRE – Real Estate CRM">
+                        <img src="data:image/jpeg;base64,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" alt="VaultRE" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/vaultre.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🏠</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">VaultRE</h4>
+                        <p class="text-xs text-text-secondary mt-1">Real Estate CRM</p>
+                    </div>
+
+                    <!-- LockedOn -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="LockedOn – Real Estate CRM">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBWMPLJd266pLve78Gw8vZBDl7WBS6X5v2_yjtxp_eyn94T71no7sFL1e7va1CDsEaZS8&usqp=CAU" alt="LockedOn" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/lockedon.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🔒</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">LockedOn</h4>
+                        <p class="text-xs text-text-secondary mt-1">Real Estate CRM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Identity & Security -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-text-primary mb-6">Identity & Security</h3>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- ID4ME -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="ID4ME – Identity & Access">
+                        <img src="data:image/png;base64,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" alt="ID4ME" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/id4me.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🔐</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">ID4ME</h4>
+                        <p class="text-xs text-text-secondary mt-1">Identity & Access</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Tools -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold text-text-primary mb-6">Other Tools</h3>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- WHMCS -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="WHMCS – Hosting Management & Billing">
+                        <img src="https://images.seeklogo.com/logo-png/42/1/whmcs-logo-png_seeklogo-424722.png" alt="WHMCS" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/whmcs.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">💻</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">WHMCS</h4>
+                        <p class="text-xs text-text-secondary mt-1">Hosting Management & Billing</p>
+                    </div>
+
+                    <!-- GorillaDesk -->
+                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="GorillaDesk – Invoicing & Billing">
+                        <img src="data:image/png;base64,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" alt="GorillaDesk" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://brandfetch.com/gorilladesk.com?view=library&library=default&collection=logos&asset=idPA9dQ_p6'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
+                            <span class="text-xs text-text-secondary font-bold">🦍</span>
+                        </div>
+                        <h4 class="font-semibold text-sm text-text-primary">GorillaDesk</h4>
+                        <p class="text-xs text-text-secondary mt-1">Invoicing & Billing</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -552,11 +810,7 @@
                 <!-- Company Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
-                            <circle cx="16" cy="16" r="4"/>
-                        </svg>
-                        <span class="text-xl font-bold">TECHSHEQ</span>
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </div>
                     <p class="text-text-secondary mb-4 max-w-md">
                         Your trusted global business extension, delivering cost-effective excellence from Sri Lanka with perfect time-zone alignment.
@@ -604,8 +858,8 @@
     </footer>
 
     <!-- Mobile Sticky CTA -->
-    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-slate-700/50 p-4 md:hidden z-40">
-        <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center">
+    <div class="mobile-sticky md:hidden z-40">
+        <a href="contact_discovery_call_booking.html" class="btn-primary w-full text-center touch-feedback">
             Book Discovery Call
         </a>
     </div>
@@ -654,10 +908,56 @@
     </div>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+        // Enhanced Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking on navigation links
+        document.querySelectorAll('#mobile-menu nav a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Touch gesture support for mobile menu
+        let startY = 0;
+        let currentY = 0;
+        let isDragging = false;
+
+        mobileMenu.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+            isDragging = true;
+        });
+
+        mobileMenu.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY;
+            const diffY = currentY - startY;
+            
+            if (diffY > 100) { // Swipe down to close
+                closeMobileMenu();
+                isDragging = false;
+            }
+        });
+
+        mobileMenu.addEventListener('touchend', () => {
+            isDragging = false;
         });
 
         // ROI Calculator functions
@@ -683,31 +983,48 @@
             document.getElementById('three-year-savings').textContent = '$' + threeYearSavings.toLocaleString();
         });
 
-        // Time zone updates (mock implementation)
+        // Time zone updates with real timestamps
         function updateTimes() {
             const now = new Date();
-            // Mock time updates - in real implementation, these would be calculated based on actual time zones
+            
+            // Real timezone calculations for all cities
             const times = {
-                'sri-lanka-time': '8:50 PM',
-                'ny-time': '10:20 AM',
-                'ny-time-2': '10:20 AM',
-                'la-time': '7:20 AM',
-                'tor-time': '10:20 AM',
-                'lon-time': '3:20 PM',
-                'dub-time': '7:20 PM',
-                'fra-time': '4:20 PM',
-                'syd-time': '12:20 AM',
-                'syd-time-2': '12:20 AM',
-                'sin-time': '11:20 PM',
-                'lk-time': '8:50 PM',
-                'lk-time-2': '8:50 PM',
-                'footer-time': '8:50 PM'
+                // Asia
+                'col-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
+                'sin-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Singapore' }),
+                'bkk-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Bangkok' }),
+                
+                // Gulf
+                'dub-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Dubai' }),
+                'doh-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Qatar' }),
+                'riy-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Riyadh' }),
+                
+                // Europe
+                'lon-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Europe/London' }),
+                'fra-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Europe/Berlin' }),
+                'par-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Europe/Paris' }),
+                
+                // Americas
+                'ny-time-2': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/New_York' }),
+                'chi-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Chicago' }),
+                'sf-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Los_Angeles' }),
+                
+                // Legacy IDs for other sections
+                'sri-lanka-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
+                'ny-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/New_York' }),
+                'la-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Los_Angeles' }),
+                'tor-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Toronto' }),
+                'syd-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Australia/Sydney' }),
+                'syd-time-2': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Australia/Sydney' }),
+                'lk-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
+                'lk-time-2': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
+                'footer-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Colombo' })
             };
 
             Object.keys(times).forEach(id => {
                 const element = document.getElementById(id);
                 if (element) {
-                    element.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second:"2-digit"  ,hour12: true, timeZone: 'Asia/Colombo' }) ;
+                    element.textContent = times[id];
                 }
             });
         }

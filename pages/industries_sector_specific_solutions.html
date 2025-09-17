@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Industries - Sector-Specific Solutions | TECHSHEQ</title>
-    <meta name="description" content="Discover how TECHSHEQ delivers tailored solutions across Technology Startups, Professional Services, E-commerce, Healthcare, and Financial Services with time-zone aligned support." />
+    <meta name="description" content="Discover how TECHSHEQ delivers tailored solutions across Technology Startups, Professional Services, E-commerce, and Financial Services with time-zone aligned support." />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,13 +16,9 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center space-x-2">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
-                            <circle cx="16" cy="16" r="4"/>
-                        </svg>
-                        <span class="text-xl font-bold text-text-primary">TECHSHEQ</span>
+                <div class="flex-shrink-0 pl-0">
+                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center">
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </a>
                 </div>
 
@@ -79,7 +75,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2" id="mobile-menu-button">
+                <button class="md:hidden mobile-menu-button touch-feedback" id="mobile-menu-button" aria-label="Open mobile menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -120,7 +116,7 @@
                 <!-- Industry Stats -->
                 <div class="flex flex-wrap justify-center gap-8 animate-fade-up" style="animation-delay: 400ms;">
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-primary">5</div>
+                        <div class="text-3xl font-bold text-primary">4</div>
                         <div class="text-sm text-text-secondary">Key Industries</div>
                     </div>
                     <div class="text-center">
@@ -158,12 +154,6 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     E-commerce
-                </button>
-                <button class="industry-tab px-6 py-3 rounded-lg font-semibold transition-all duration-300" data-industry="healthcare">
-                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                    </svg>
-                    Healthcare
                 </button>
                 <button class="industry-tab px-6 py-3 rounded-lg font-semibold transition-all duration-300" data-industry="financial">
                     <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -514,113 +504,6 @@
                     </div>
                 </div>
 
-                <!-- Healthcare -->
-                <div id="healthcare" class="industry-panel">
-                    <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
-                        <div>
-                            <h2 class="text-3xl font-bold mb-6 text-primary">Healthcare</h2>
-                            <p class="text-lg text-text-secondary mb-6">
-                                HIPAA-compliant solutions with secure patient data management and healthcare-specific administrative support.
-                            </p>
-                            
-                            <!-- Key Challenges -->
-                            <div class="mb-8">
-                                <h3 class="text-xl font-semibold mb-4">Key Challenges We Address:</h3>
-                                <ul class="space-y-3">
-                                    <li class="flex items-start space-x-3">
-                                        <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                                        </svg>
-                                        <span>HIPAA compliance and data security</span>
-                                    </li>
-                                    <li class="flex items-start space-x-3">
-                                        <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                                        </svg>
-                                        <span>Patient data management systems</span>
-                                    </li>
-                                    <li class="flex items-start space-x-3">
-                                        <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                                        </svg>
-                                        <span>Telemedicine platform integration</span>
-                                    </li>
-                                    <li class="flex items-start space-x-3">
-                                        <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
-                                        </svg>
-                                        <span>Medical billing and insurance processing</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Healthcare technology with secure patient data management" class="w-full h-80 object-cover rounded-xl shadow-strong" loading="lazy" onerror="this.src='https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
-                            
-                            <!-- Overlay Stats -->
-                            <div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm rounded-lg p-4 border border-slate-700/50">
-                                <div class="grid grid-cols-3 gap-4 text-center">
-                                    <div>
-                                        <div class="text-lg font-bold text-primary">100%</div>
-                                        <div class="text-xs text-text-secondary">HIPAA Compliant</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold text-accent">256-bit</div>
-                                        <div class="text-xs text-text-secondary">Encryption</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-lg font-bold text-primary">24/7</div>
-                                        <div class="text-xs text-text-secondary">Secure Access</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Compliance Certifications -->
-                    <div class="card bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20 mb-12">
-                        <h3 class="text-xl font-bold mb-4 text-center">Healthcare Compliance Certifications</h3>
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-sm">HIPAA</h4>
-                                <p class="text-xs text-text-secondary">Compliant</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-sm">SOC 2</h4>
-                                <p class="text-xs text-text-secondary">Type II</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-sm">ISO 27001</h4>
-                                <p class="text-xs text-text-secondary">Certified</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-sm">GDPR</h4>
-                                <p class="text-xs text-text-secondary">Compliant</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Financial Services -->
                 <div id="financial" class="industry-panel">
@@ -686,52 +569,6 @@
                         </div>
                     </div>
 
-                    <!-- Financial Compliance -->
-                    <div class="card bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20 mb-12">
-                        <h3 class="text-xl font-bold mb-4 text-center">Financial Compliance Standards</h3>
-                        <div class="grid md:grid-cols-5 gap-4">
-                            <div class="text-center">
-                                <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-xs">PCI DSS</h4>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                                    <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-xs">SOX</h4>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-xs">GDPR</h4>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                                    <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-xs">AML</h4>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="font-semibold text-xs">KYC</h4>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -854,7 +691,6 @@
                             <option value="tech-startup">Technology Startup</option>
                             <option value="professional-services">Professional Services</option>
                             <option value="ecommerce">E-commerce</option>
-                            <option value="healthcare">Healthcare</option>
                             <option value="financial">Financial Services</option>
                         </select>
                     </div>
@@ -867,6 +703,10 @@
                             <option value="compliance">Compliance requirements</option>
                             <option value="performance">Performance issues</option>
                             <option value="admin">Administrative overhead</option>
+                            <option value="security">Security concerns</option>
+                            <option value="support">24/7 support needs</option>
+                            <option value="integration">System integration</option>
+                            <option value="automation">Process automation</option>
                         </select>
                     </div>
                 </div>
@@ -917,11 +757,7 @@
                 <!-- Company Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
-                            <circle cx="16" cy="16" r="4"/>
-                        </svg>
-                        <span class="text-xl font-bold">TECHSHEQ</span>
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </div>
                     <p class="text-text-secondary mb-4 max-w-md">
                         Your trusted global business extension, delivering cost-effective excellence from Sri Lanka with perfect time-zone alignment.
@@ -1035,6 +871,21 @@
                     { service: 'Cloud Cost Optimization', description: 'Reduce infrastructure costs by 60%', timeline: '1-2 weeks' },
                     { service: 'Offshore Development', description: 'Cost-effective development team', timeline: '2-3 weeks' },
                     { service: 'Process Automation', description: 'Automate repetitive tasks', timeline: '3-4 weeks' }
+                ],
+                'performance': [
+                    { service: 'Performance Optimization', description: 'Application and database optimization', timeline: '2-3 weeks' },
+                    { service: 'Infrastructure Monitoring', description: 'Real-time performance tracking', timeline: '1 week' },
+                    { service: 'Caching Solutions', description: 'Implement caching for faster response', timeline: '1-2 weeks' }
+                ],
+                'security': [
+                    { service: 'Security Audit & Implementation', description: 'Comprehensive security assessment', timeline: '2-3 weeks' },
+                    { service: 'Managed Security Services', description: '24/7 security monitoring', timeline: '1 week' },
+                    { service: 'Compliance Support', description: 'Security compliance assistance', timeline: '3-4 weeks' }
+                ],
+                'support': [
+                    { service: '24/7 Technical Support', description: 'Round-the-clock technical assistance', timeline: 'Immediate' },
+                    { service: 'Dedicated Support Team', description: 'Dedicated support engineers', timeline: '1-2 weeks' },
+                    { service: 'Incident Response', description: 'Fast incident resolution', timeline: 'Immediate' }
                 ]
             },
             'professional-services': {
@@ -1047,6 +898,16 @@
                     { service: 'Compliance Management', description: 'Regulatory compliance support', timeline: '2-4 weeks' },
                     { service: 'Process Documentation', description: 'Standardized procedures', timeline: '3-4 weeks' },
                     { service: 'Audit Support', description: 'Audit preparation and support', timeline: 'Ongoing' }
+                ],
+                'automation': [
+                    { service: 'Workflow Automation', description: 'Automate business processes', timeline: '3-4 weeks' },
+                    { service: 'Document Automation', description: 'Automated document generation', timeline: '2-3 weeks' },
+                    { service: 'Reporting Automation', description: 'Automated report generation', timeline: '2 weeks' }
+                ],
+                'integration': [
+                    { service: 'System Integration', description: 'Connect existing systems', timeline: '4-6 weeks' },
+                    { service: 'API Development', description: 'Custom API development', timeline: '3-4 weeks' },
+                    { service: 'Data Migration', description: 'Seamless data transfer', timeline: '2-4 weeks' }
                 ]
             },
             'ecommerce': {
@@ -1059,6 +920,38 @@
                     { service: 'Infrastructure Scaling', description: 'Handle traffic spikes automatically', timeline: '2-3 weeks' },
                     { service: 'Payment Integration', description: 'Multiple payment gateways', timeline: '1-2 weeks' },
                     { service: 'Customer Support', description: '24/7 customer service', timeline: '1 week' }
+                ],
+                'security': [
+                    { service: 'E-commerce Security', description: 'Payment security and fraud protection', timeline: '2-3 weeks' },
+                    { service: 'SSL & Encryption', description: 'Secure data transmission', timeline: '1 week' },
+                    { service: 'Security Monitoring', description: '24/7 security surveillance', timeline: 'Immediate' }
+                ],
+                'support': [
+                    { service: 'Customer Support', description: '24/7 customer service', timeline: '1 week' },
+                    { service: 'Technical Support', description: 'Platform technical assistance', timeline: 'Immediate' },
+                    { service: 'Maintenance Support', description: 'Ongoing platform maintenance', timeline: 'Ongoing' }
+                ]
+            },
+            'financial': {
+                'compliance': [
+                    { service: 'Regulatory Compliance', description: 'Financial compliance management', timeline: '4-6 weeks' },
+                    { service: 'Audit Support', description: 'Comprehensive audit assistance', timeline: 'Ongoing' },
+                    { service: 'Risk Assessment', description: 'Financial risk evaluation', timeline: '2-3 weeks' }
+                ],
+                'security': [
+                    { service: 'Bank-grade Security', description: 'Enterprise-level security implementation', timeline: '3-4 weeks' },
+                    { service: 'Fraud Detection', description: 'Advanced fraud prevention systems', timeline: '2-3 weeks' },
+                    { service: 'Data Encryption', description: 'End-to-end data protection', timeline: '1-2 weeks' }
+                ],
+                'performance': [
+                    { service: 'Transaction Processing', description: 'High-speed transaction systems', timeline: '3-4 weeks' },
+                    { service: 'System Optimization', description: 'Financial system performance tuning', timeline: '2-3 weeks' },
+                    { service: 'Real-time Monitoring', description: '24/7 financial system monitoring', timeline: '1 week' }
+                ],
+                'integration': [
+                    { service: 'Payment Gateway Integration', description: 'Multiple payment systems', timeline: '2-3 weeks' },
+                    { service: 'Banking API Integration', description: 'Bank system connectivity', timeline: '3-4 weeks' },
+                    { service: 'Financial Software Integration', description: 'Accounting system integration', timeline: '2-4 weeks' }
                 ]
             }
         };

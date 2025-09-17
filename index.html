@@ -6,8 +6,147 @@
     <title>TECHSHEQ Business Extension - B2B Service Provider Platform</title>
     <link rel="stylesheet" href="css/main.css" />
     <style>
+        @layer utilities {
+            /* Custom animations for the loading screen */
+            @keyframes logoPulse {
+                0%, 100% { 
+                    transform: scale(1);
+                    filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+                }
+                50% { 
+                    transform: scale(1.05);
+                    filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6));
+                }
+            }
+            
+            @keyframes logoGlow {
+                0%, 100% { 
+                    text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+                }
+                50% { 
+                    text-shadow: 0 0 40px rgba(102, 126, 234, 0.8), 0 0 60px rgba(118, 75, 162, 0.4);
+                }
+            }
+            
+            @keyframes taglineSlideUp {
+                0% { 
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                100% { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes progressGradient {
+                0% { 
+                    background-position: 0% 50%;
+                }
+                50% { 
+                    background-position: 100% 50%;
+                }
+                100% { 
+                    background-position: 0% 50%;
+                }
+            }
+            
+            @keyframes redirectFadeIn {
+                0% { 
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                100% { 
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes circularProgress {
+                0% { 
+                    stroke-dashoffset: 251.2;
+                }
+                100% { 
+                    stroke-dashoffset: 0;
+                }
+            }
+            
+            @keyframes logoFloat {
+                0%, 100% { 
+                    transform: translateY(0px) scale(1);
+                    filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+                }
+                50% { 
+                    transform: translateY(-10px) scale(1.05);
+                    filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6));
+                }
+            }
+            
+            @keyframes logoRotate {
+                0% { 
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+                100% { 
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
+            
+            @keyframes particleFloat {
+                0%, 100% { 
+                    opacity: 0.6;
+                    transform: translateY(0px) scale(1);
+                }
+                50% { 
+                    opacity: 1;
+                    transform: translateY(-20px) scale(1.2);
+                }
+            }
+            
+            @keyframes logoScale {
+                0%, 100% { 
+                    transform: scale(1);
+                }
+                50% { 
+                    transform: scale(1.1);
+                }
+            }
+            
+            @keyframes logoShimmer {
+                0% { 
+                    background-position: -200% center;
+                }
+                100% { 
+                    background-position: 200% center;
+                }
+            }
+            
+            .animate-logo-pulse {
+                animation: logoPulse 2s ease-in-out infinite;
+            }
+            
+            .animate-logo-glow {
+                animation: logoGlow 3s ease-in-out infinite;
+            }
+            
+            .animate-tagline-slide {
+                animation: taglineSlideUp 1s ease-out 0.5s both;
+            }
+            
+            .animate-progress-gradient {
+                animation: progressGradient 2s ease-in-out infinite;
+            }
+            
+            .animate-redirect-fade {
+                animation: redirectFadeIn 0.8s ease-out 1.5s both;
+            }
+            
+            .animate-circular-progress {
+                animation: circularProgress 3s ease-in-out forwards;
+            }
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -15,89 +154,426 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow: hidden;
         }
         
-        .redirect-container {
+        .loading-container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 90%;
+            color: white;
+            position: relative;
+            z-index: 10;
         }
         
-        .logo {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #333;
+        .logo-container {
+            margin-bottom: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-image {
+            width: 120px;
+            height: 120px;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            animation: logoGlow 3s ease-in-out infinite;
         }
         
-        .loading-text {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
+        .logo-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+            animation: logoPulse 2s ease-in-out infinite;
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .logo-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            animation: logoRotate 4s linear infinite;
         }
         
-        .progress-bar {
+        .logo-ring::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px solid transparent;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: logoRotate 2s linear infinite reverse;
+        }
+        
+        .logo-particles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 3s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        
+        .particle:nth-child(2) {
+            top: 30%;
+            right: 20%;
+            animation-delay: 0.5s;
+        }
+        
+        .particle:nth-child(3) {
+            bottom: 30%;
+            left: 30%;
+            animation-delay: 1s;
+        }
+        
+        .particle:nth-child(4) {
+            bottom: 20%;
+            right: 30%;
+            animation-delay: 1.5s;
+        }
+        
+        .particle:nth-child(5) {
+            top: 50%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+        
+        .particle:nth-child(6) {
+            top: 50%;
+            right: 10%;
+            animation-delay: 2.5s;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+        
+        .progress-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .circular-progress {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .circular-progress svg {
             width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        
+        .circular-progress-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 4;
+        }
+        
+        .circular-progress-fill {
+            fill: none;
+            stroke: url(#gradient);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-dasharray: 251.2;
+            stroke-dashoffset: 251.2;
+        }
+        
+        .linear-progress {
+            width: 300px;
             height: 6px;
-            background-color: #e0e0e0;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 3px;
             overflow: hidden;
-            margin-bottom: 20px;
+            position: relative;
         }
         
-        .progress-fill {
+        .linear-progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
             width: 0%;
-            animation: progress 3s ease-in-out forwards;
-        }
-        
-        @keyframes progress {
-            0% { width: 0%; }
-            100% { width: 100%; }
+            border-radius: 3px;
+            animation: progressGradient 2s ease-in-out infinite;
         }
         
         .redirect-info {
-            font-size: 0.9em;
-            color: #888;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
             font-style: italic;
+            margin-top: 30px;
+        }
+        
+        .loading-dots {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: 8px;
+        }
+        
+        .loading-dots span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            animation: dotsBounce 1.4s ease-in-out infinite both;
+        }
+        
+        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0s; }
+        
+        @keyframes dotsBounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .logo-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-text {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .logo-ring {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .logo-glow {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .linear-progress {
+                width: 250px;
+            }
+            
+            .circular-progress {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-image {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            
+            .logo-ring {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-glow {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .linear-progress {
+                width: 200px;
+            }
         }
     </style>
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftechsheqb1662back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
 <body>
-    <div class="redirect-container">
-        <div class="logo">TECHSHEQ</div>
-        <div class="loading-text">Launching Business Extension Platform...</div>
-        <div class="spinner"></div>
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
+    <div class="loading-container">
+        <!-- Logo with animated effects -->
+        <div class="logo-container">
+            <!-- Background glow effect -->
+            <div class="logo-glow"></div>
+            
+            <!-- Rotating ring around logo -->
+            <div class="logo-ring"></div>
+            
+            <!-- Floating particles -->
+            <div class="logo-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            
+            <!-- TECHSHEQ Logo SVG -->
+            <div class="logo-image">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Background circle -->
+                    <circle cx="60" cy="60" r="55" fill="url(#logoGradient)" opacity="0.1"/>
+                    
+                    <!-- Main T letter -->
+                    <rect x="45" y="30" width="30" height="8" fill="url(#logoGradient)" rx="4"/>
+                    <rect x="55" y="30" width="10" height="50" fill="url(#logoGradient)" rx="4"/>
+                    
+                    <!-- Tech elements -->
+                    <circle cx="35" cy="45" r="3" fill="url(#logoGradient)" opacity="0.7"/>
+                    <circle cx="85" cy="45" r="3" fill="url(#logoGradient)" opacity="0.7"/>
+                    <circle cx="35" cy="75" r="3" fill="url(#logoGradient)" opacity="0.7"/>
+                    <circle cx="85" cy="75" r="3" fill="url(#logoGradient)" opacity="0.7"/>
+                    
+                    <!-- Connecting lines -->
+                    <line x1="35" y1="45" x2="45" y2="45" stroke="url(#logoGradient)" stroke-width="2" opacity="0.5"/>
+                    <line x1="75" y1="45" x2="85" y2="45" stroke="url(#logoGradient)" stroke-width="2" opacity="0.5"/>
+                    <line x1="35" y1="75" x2="45" y2="75" stroke="url(#logoGradient)" stroke-width="2" opacity="0.5"/>
+                    <line x1="75" y1="75" x2="85" y2="75" stroke="url(#logoGradient)" stroke-width="2" opacity="0.5"/>
+                    
+                    <!-- Animated pulse ring -->
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.3">
+                        <animate attributeName="r" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            
+            <!-- Logo Text -->
+            <h1 class="logo-text">TECHSHEQ</h1>
         </div>
-        <div class="redirect-info">Redirecting to homepage in a moment...</div>
+        
+        <!-- Tagline with slide-up animation -->
+        <div class="tagline animate-tagline-slide">
+            Launching Business Extension Platform<span class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        
+        <!-- Progress indicators -->
+        <div class="progress-container">
+            <!-- Circular progress -->
+            <div class="circular-progress">
+                <svg viewBox="0 0 80 80">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="circular-progress-bg" cx="40" cy="40" r="36"/>
+                    <circle class="circular-progress-fill animate-circular-progress" cx="40" cy="40" r="36"/>
+                </svg>
+            </div>
+            
+            <!-- Linear progress bar -->
+            <div class="linear-progress">
+                <div class="linear-progress-fill" id="linearProgress"></div>
+            </div>
+        </div>
+        
+        <!-- Redirect message with fade-in animation -->
+        <div class="redirect-info animate-redirect-fade">
+            Redirecting to homepage<span class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
     </div>
 
     <script>
+        // Animate the linear progress bar
+        function animateProgress() {
+            const progressBar = document.getElementById('linearProgress');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width += 1;
+                    progressBar.style.width = width + '%';
+                }
+            }, 30); // 3 seconds total (3000ms / 100 steps = 30ms per step)
+        }
+        
+        // Start progress animation after a short delay
+        setTimeout(animateProgress, 500);
+        
         // Redirect to the homepage after 3 seconds
         setTimeout(function() {
             window.location.href = 'pages/homepage_b2b_service_provider_platform.html';
@@ -110,6 +586,70 @@
                     window.location.href = 'pages/homepage_b2b_service_provider_platform.html';
                 }
             }, 3500);
+        });
+        
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click-to-skip functionality (optional)
+            document.addEventListener('click', function() {
+                window.location.href = 'pages/homepage_b2b_service_provider_platform.html';
+            });
+            
+            // Add keyboard skip functionality
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.location.href = 'pages/homepage_b2b_service_provider_platform.html';
+                }
+            });
+            
+            // Enhanced logo animation effects
+            const logoImage = document.querySelector('.logo-image');
+            const logoText = document.querySelector('.logo-text');
+            const particles = document.querySelectorAll('.particle');
+            
+            // Add hover effects to logo
+            if (logoImage) {
+                logoImage.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1) rotate(5deg)';
+                    this.style.filter = 'drop-shadow(0 0 40px rgba(102, 126, 234, 0.8))';
+                });
+                
+                logoImage.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                    this.style.filter = 'drop-shadow(0 0 20px rgba(102, 126, 234, 0.3))';
+                });
+            }
+            
+            // Add random particle movement
+            particles.forEach((particle, index) => {
+                setInterval(() => {
+                    const randomX = (Math.random() - 0.5) * 20;
+                    const randomY = (Math.random() - 0.5) * 20;
+                    particle.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                }, 2000 + (index * 200));
+            });
+            
+            // Add logo text shimmer effect
+            if (logoText) {
+                setInterval(() => {
+                    logoText.style.background = 'linear-gradient(45deg, #ffffff, #667eea, #764ba2, #ffffff)';
+                    logoText.style.backgroundSize = '200% 200%';
+                    logoText.style.webkitBackgroundClip = 'text';
+                    logoText.style.webkitTextFillColor = 'transparent';
+                    logoText.style.animation = 'logoShimmer 2s ease-in-out';
+                }, 3000);
+            }
+            
+            // Add loading completion effect
+            setTimeout(() => {
+                if (logoImage) {
+                    logoImage.style.animation = 'logoScale 0.5s ease-out';
+                }
+                if (logoText) {
+                    logoText.style.animation = 'logoGlow 0.5s ease-out, logoScale 0.5s ease-out';
+                }
+            }, 2500);
         });
     </script>
 </body>

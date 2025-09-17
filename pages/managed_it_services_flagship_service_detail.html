@@ -22,8 +22,8 @@
                 <span class="font-semibold">24/7 IT Emergency Support Available</span>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="tel:+94112345678" class="btn-primary bg-white text-error hover:bg-gray-100 py-2 px-4 text-sm">
-                    Call Now: +94 11 234 5678
+                <a href="tel:+94719749498" class="btn-primary bg-white text-error hover:bg-gray-100 py-2 px-4 text-sm">
+                    Call Now: +94719749498
                 </a>
                 <a href="contact_discovery_call_booking.html" class="text-white hover:text-gray-200 underline text-sm">
                     Schedule Support
@@ -37,13 +37,9 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center space-x-2">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
-                            <circle cx="16" cy="16" r="4"/>
-                        </svg>
-                        <span class="text-xl font-bold text-text-primary">TECHSHEQ</span>
+                <div class="flex-shrink-0 pl-0">
+                    <a href="homepage_b2b_service_provider_platform.html" class="flex items-center">
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </a>
                 </div>
 
@@ -146,7 +142,7 @@
                     </h1>
                     
                     <p class="text-xl text-text-secondary mb-8 max-w-2xl animate-fade-up" style="animation-delay: 200ms;">
-                        Enterprise-grade IT infrastructure management with guaranteed 99.9% uptime SLA and average 15-minute response times during your business hours.
+                        Enterprise-grade IT infrastructure management with guaranteed 99.9% uptime SLA and average 45-minute response times during your business hours.
                     </p>
 
                     <!-- Key Metrics -->
@@ -156,7 +152,7 @@
                             <div class="text-sm text-text-secondary">Uptime SLA</div>
                         </div>
                         <div class="text-center p-4 bg-surface/50 rounded-lg border border-slate-700/50">
-                            <div class="text-2xl font-bold text-primary">15min</div>
+                            <div class="text-2xl font-bold text-primary">45min</div>
                             <div class="text-sm text-text-secondary">Avg Response</div>
                         </div>
                         <div class="text-center p-4 bg-surface/50 rounded-lg border border-slate-700/50">
@@ -197,51 +193,115 @@
                         </div>
                         
                         <!-- Dashboard Content -->
+                        <!-- TODO: Replace with real monitoring data from our systems (Prometheus, Grafana, Nagios) -->
                         <div class="p-6">
                             <!-- Status Cards -->
                             <div class="grid grid-cols-2 gap-4 mb-6">
                                 <div class="bg-background rounded-lg p-4">
                                     <div class="flex items-center justify-between mb-2">
                                         <span class="text-sm text-text-secondary">Server Status</span>
-                                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                                     </div>
                                     <div class="text-2xl font-bold text-accent">Online</div>
                                     <div class="text-xs text-text-secondary">99.97% uptime</div>
+                                    <div class="text-xs text-accent">Last updated: <span id="server-status-time">2:45 PM</span></div>
                                 </div>
                                 <div class="bg-background rounded-lg p-4">
                                     <div class="flex items-center justify-between mb-2">
                                         <span class="text-sm text-text-secondary">Response Time</span>
-                                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                        <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                                     </div>
                                     <div class="text-2xl font-bold text-primary">12ms</div>
                                     <div class="text-xs text-text-secondary">Average today</div>
+                                    <div class="text-xs text-primary">Peak: 45ms at 1:30 PM</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Additional Real-time Metrics -->
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <div class="bg-background rounded-lg p-3 text-center">
+                                    <div class="text-lg font-bold text-accent" id="cpu-usage">23%</div>
+                                    <div class="text-xs text-text-secondary">CPU Usage</div>
+                                </div>
+                                <div class="bg-background rounded-lg p-3 text-center">
+                                    <div class="text-lg font-bold text-primary" id="memory-usage">67%</div>
+                                    <div class="text-xs text-text-secondary">Memory</div>
+                                </div>
+                                <div class="bg-background rounded-lg p-3 text-center">
+                                    <div class="text-lg font-bold text-accent" id="disk-usage">45%</div>
+                                    <div class="text-xs text-text-secondary">Disk Space</div>
                                 </div>
                             </div>
                             
                             <!-- Performance Chart Placeholder -->
+                            <!-- TODO: Integrate with real Grafana charts -->
                             <div class="bg-background rounded-lg p-4 mb-4">
-                                <h4 class="text-sm font-semibold mb-3">Performance Metrics</h4>
+                                <div class="flex items-center justify-between mb-3">
+                                    <h4 class="text-sm font-semibold">Performance Metrics</h4>
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                                        <span class="text-xs text-accent">Live Data</span>
+                                    </div>
+                                </div>
                                 <div class="h-24 flex items-end space-x-1">
-                                    <div class="bg-primary/60 w-4 h-16 rounded-t"></div>
-                                    <div class="bg-primary/70 w-4 h-20 rounded-t"></div>
-                                    <div class="bg-primary/80 w-4 h-18 rounded-t"></div>
-                                    <div class="bg-primary w-4 h-24 rounded-t"></div>
-                                    <div class="bg-accent/60 w-4 h-22 rounded-t"></div>
-                                    <div class="bg-accent/70 w-4 h-20 rounded-t"></div>
-                                    <div class="bg-accent w-4 h-24 rounded-t"></div>
+                                    <div class="bg-primary/60 w-4 h-16 rounded-t" title="2:30 PM - 85%"></div>
+                                    <div class="bg-primary/70 w-4 h-20 rounded-t" title="2:35 PM - 92%"></div>
+                                    <div class="bg-primary/80 w-4 h-18 rounded-t" title="2:40 PM - 88%"></div>
+                                    <div class="bg-primary w-4 h-24 rounded-t" title="2:45 PM - 95%"></div>
+                                    <div class="bg-accent/60 w-4 h-22 rounded-t" title="2:50 PM - 91%"></div>
+                                    <div class="bg-accent/70 w-4 h-20 rounded-t" title="2:55 PM - 89%"></div>
+                                    <div class="bg-accent w-4 h-24 rounded-t animate-pulse" title="3:00 PM - 94%"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-text-secondary mt-2">
+                                    <span>2:30 PM</span>
+                                    <span>3:00 PM</span>
                                 </div>
                             </div>
                             
-                            <!-- Recent Alerts -->
+                            <!-- Network & Security Status -->
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="bg-background rounded-lg p-3">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-text-secondary">Network Traffic</span>
+                                        <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                                    </div>
+                                    <div class="text-lg font-bold text-primary" id="network-in">↗ 1.2 GB/s</div>
+                                    <div class="text-xs text-text-secondary">Inbound</div>
+                                    <div class="text-lg font-bold text-accent" id="network-out">↘ 890 MB/s</div>
+                                    <div class="text-xs text-text-secondary">Outbound</div>
+                                </div>
+                                <div class="bg-background rounded-lg p-3">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-sm text-text-secondary">Security Status</span>
+                                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                                    </div>
+                                    <div class="text-lg font-bold text-accent">Protected</div>
+                                    <div class="text-xs text-text-secondary">Last scan: <span id="last-scan">3 min ago</span></div>
+                                    <div class="text-xs text-accent">Threats blocked: <span id="threats-blocked">0 today</span></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Recent Alerts & Activity -->
                             <div class="space-y-2">
-                                <h4 class="text-sm font-semibold">Recent Activity</h4>
-                                <div class="flex items-center space-x-3 text-sm">
-                                    <div class="w-2 h-2 bg-accent rounded-full"></div>
-                                    <span class="text-text-secondary">System backup completed - 2:30 PM</span>
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-semibold">Recent Activity</h4>
+                                    <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                                 </div>
                                 <div class="flex items-center space-x-3 text-sm">
-                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
-                                    <span class="text-text-secondary">Security scan passed - 1:15 PM</span>
+                                    <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                                    <span class="text-text-secondary">System backup completed - <span id="backup-time">2:30 PM</span></span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm">
+                                    <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                                    <span class="text-text-secondary">Security scan passed - <span id="scan-time">1:15 PM</span></span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm">
+                                    <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                    <span class="text-text-secondary">Database optimized - <span id="db-optimize-time">12:45 PM</span></span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm">
+                                    <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                                    <span class="text-text-secondary">New user login detected - <span id="login-time">2:58 PM</span></span>
                                 </div>
                             </div>
                         </div>
@@ -359,7 +419,7 @@
                     </div>
                 </div>
 
-                <!-- Cybersecurity & Compliance -->
+                <!-- IT Security & Protection -->
                 <div class="card group cursor-pointer" onclick="toggleSection('security-section')">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
@@ -369,8 +429,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Cybersecurity & Compliance</h3>
-                                <p class="text-text-secondary">ISO 27001, SOC 2, GDPR compliance</p>
+                                <h3 class="text-xl font-bold">IT Security & Protection</h3>
+                                <p class="text-text-secondary">Comprehensive security solutions & data protection</p>
                             </div>
                         </div>
                         <svg class="w-5 h-5 text-text-secondary transform transition-transform group-hover:rotate-180" id="security-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -385,13 +445,13 @@
                                     <svg class="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
                                     </svg>
-                                    Security Auditing
+                                    Security Monitoring
                                 </h4>
                                 <ul class="text-sm text-text-secondary space-y-2">
-                                    <li>• Vulnerability assessments</li>
-                                    <li>• Penetration testing</li>
-                                    <li>• Security policy development</li>
-                                    <li>• Incident response planning</li>
+                                    <li>• 24/7 threat detection & monitoring</li>
+                                    <li>• Firewall management & configuration</li>
+                                    <li>• Intrusion detection systems</li>
+                                    <li>• Security incident response</li>
                                 </ul>
                             </div>
                             
@@ -400,36 +460,39 @@
                                     <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
                                     </svg>
-                                    Compliance Management
+                                    Data Protection
                                 </h4>
                                 <ul class="text-sm text-text-secondary space-y-2">
-                                    <li>• ISO 27001 implementation</li>
-                                    <li>• SOC 2 Type II reporting</li>
-                                    <li>• GDPR compliance audits</li>
-                                    <li>• Industry-specific standards</li>
+                                    <li>• Automated backup & recovery</li>
+                                    <li>• Data encryption at rest & in transit</li>
+                                    <li>• Access control & user management</li>
+                                    <li>• Regular security assessments</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <!-- Certification Badges -->
-                        <div class="flex flex-wrap gap-4 justify-center">
-                            <div class="flex items-center space-x-2 px-4 py-2 bg-accent/10 rounded-lg border border-accent/20">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                </svg>
-                                <span class="text-sm font-semibold text-accent">ISO 27001 Certified</span>
-                            </div>
-                            <div class="flex items-center space-x-2 px-4 py-2 bg-primary/10 rounded-lg border border-primary/20">
-                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                </svg>
-                                <span class="text-sm font-semibold text-primary">SOC 2 Type II</span>
-                            </div>
-                            <div class="flex items-center space-x-2 px-4 py-2 bg-accent/10 rounded-lg border border-accent/20">
-                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
-                                </svg>
-                                <span class="text-sm font-semibold text-accent">GDPR Compliant</span>
+                        <!-- Security Features -->
+                        <div class="bg-accent/10 rounded-lg p-4 border border-accent/20">
+                            <h4 class="font-semibold text-accent mb-3">Security Features</h4>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    <span>Multi-layer Security</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    <span>Real-time Monitoring</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    <span>Automated Backups</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -724,11 +787,7 @@
                 <!-- Company Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <svg class="w-8 h-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
-                            <circle cx="16" cy="16" r="4"/>
-                        </svg>
-                        <span class="text-xl font-bold">TECHSHEQ</span>
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </div>
                     <p class="text-text-secondary mb-4 max-w-md">
                         Your trusted global business extension, delivering cost-effective excellence from Sri Lanka with perfect time-zone alignment.
@@ -788,7 +847,7 @@
                 </div>
             </div>
             <div class="flex space-x-2">
-                <a href="tel:+94112345678" class="btn-primary bg-white text-error hover:bg-gray-100 py-2 px-3 text-sm flex-1 text-center">
+                <a href="tel:+94719749498" class="btn-primary bg-white text-error hover:bg-gray-100 py-2 px-3 text-sm flex-1 text-center">
                     Call Now
                 </a>
                 <a href="contact_discovery_call_booking.html" class="btn-secondary border-white text-white hover:bg-white hover:text-error py-2 px-3 text-sm flex-1 text-center">
@@ -799,12 +858,12 @@
     </div>
 
     <!-- Mobile Sticky CTA -->
-    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-slate-700/50 p-4 lg:hidden z-40">
+    <div class="mobile-sticky lg:hidden z-40">
         <div class="flex space-x-2">
-            <a href="tel:+94112345678" class="btn-primary bg-error hover:bg-error/90 flex-1 text-center">
+            <a href="tel:+94719749498" class="btn-primary bg-error hover:bg-error/90 flex-1 text-center touch-feedback">
                 Emergency Call
             </a>
-            <a href="contact_discovery_call_booking.html" class="btn-secondary flex-1 text-center">
+            <a href="contact_discovery_call_booking.html" class="btn-secondary flex-1 text-center touch-feedback">
                 Schedule Support
             </a>
         </div>
@@ -941,8 +1000,115 @@
         updateTimes();
         setInterval(updateTimes, 1000);
 
+        // Dashboard real-time data simulation
+        // TODO: Replace with actual API calls to Prometheus/Grafana/Nagios systems
+        function updateDashboardData() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+            
+            // Update timestamps
+            const timestampElements = [
+                'server-status-time', 'backup-time', 'scan-time', 
+                'db-optimize-time', 'login-time'
+            ];
+            
+            timestampElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    // Simulate realistic timestamps (some recent, some older)
+                    const minutesAgo = Math.floor(Math.random() * 30) + 1;
+                    const pastTime = new Date(now.getTime() - minutesAgo * 60000);
+                    element.textContent = pastTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+                }
+            });
+            
+            // Simulate varying system metrics
+            const cpuElement = document.getElementById('cpu-usage');
+            if (cpuElement) {
+                const cpuUsage = Math.floor(Math.random() * 40) + 15; // 15-55%
+                cpuElement.textContent = cpuUsage + '%';
+                cpuElement.className = cpuUsage > 80 ? 'text-lg font-bold text-error' : 
+                                     cpuUsage > 60 ? 'text-lg font-bold text-warning' : 'text-lg font-bold text-accent';
+            }
+            
+            const memoryElement = document.getElementById('memory-usage');
+            if (memoryElement) {
+                const memoryUsage = Math.floor(Math.random() * 30) + 50; // 50-80%
+                memoryElement.textContent = memoryUsage + '%';
+                memoryElement.className = memoryUsage > 85 ? 'text-lg font-bold text-error' : 
+                                         memoryUsage > 70 ? 'text-lg font-bold text-warning' : 'text-lg font-bold text-primary';
+            }
+            
+            const diskElement = document.getElementById('disk-usage');
+            if (diskElement) {
+                const diskUsage = Math.floor(Math.random() * 20) + 35; // 35-55%
+                diskElement.textContent = diskUsage + '%';
+                diskElement.className = diskUsage > 90 ? 'text-lg font-bold text-error' : 
+                                       diskUsage > 75 ? 'text-lg font-bold text-warning' : 'text-lg font-bold text-accent';
+            }
+            
+            // Update network traffic (simulate realistic values)
+            const networkIn = document.getElementById('network-in');
+            const networkOut = document.getElementById('network-out');
+            if (networkIn && networkOut) {
+                const inTraffic = (Math.random() * 0.8 + 0.5).toFixed(1); // 0.5-1.3 GB/s
+                const outTraffic = (Math.random() * 0.6 + 0.3).toFixed(0); // 0.3-0.9 GB/s
+                networkIn.textContent = `↗ ${inTraffic} GB/s`;
+                networkOut.textContent = `↘ ${outTraffic} MB/s`;
+            }
+            
+            // Update security scan time
+            const lastScanElement = document.getElementById('last-scan');
+            if (lastScanElement) {
+                const scanMinutesAgo = Math.floor(Math.random() * 10) + 1; // 1-10 minutes ago
+                lastScanElement.textContent = `${scanMinutesAgo} min ago`;
+            }
+        }
+        
+        // Update dashboard data every 30 seconds
+        updateDashboardData();
+        setInterval(updateDashboardData, 30000);
+
         // Initialize calculator with default values
         updateCalculations();
+
+        // Emergency call functionality - device-specific behavior
+        function handleEmergencyCall(event) {
+            // Check if device is mobile or tablet
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isTablet = /iPad|Android(?!.*Mobile)/i.test(navigator.userAgent);
+            
+            if (isMobile || isTablet) {
+                // On mobile/tablet, let the tel: link work normally (opens dialer)
+                return true;
+            } else {
+                // On desktop, prevent default and redirect to urgent support form
+                event.preventDefault();
+                window.location.href = 'contact_discovery_call_booking.html#urgent-support';
+                return false;
+            }
+        }
+
+        // Add event listeners to emergency call buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Desktop sticky CTA emergency call
+            const desktopEmergencyBtn = document.querySelector('.fixed.bottom-6.right-6 a[href^="tel:"]');
+            if (desktopEmergencyBtn) {
+                desktopEmergencyBtn.addEventListener('click', handleEmergencyCall);
+            }
+            
+            // Mobile sticky CTA emergency call  
+            const mobileEmergencyBtn = document.querySelector('.fixed.bottom-0 a[href^="tel:"]');
+            if (mobileEmergencyBtn) {
+                mobileEmergencyBtn.addEventListener('click', handleEmergencyCall);
+            }
+            
+            // Urgent support banner emergency call
+            const bannerEmergencyBtn = document.querySelector('.bg-gradient-to-r.from-error a[href^="tel:"]');
+            if (bannerEmergencyBtn) {
+                bannerEmergencyBtn.addEventListener('click', handleEmergencyCall);
+            }
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+  <title>asana.svg</title>
+  <desc>Wrapper SVG that references the official logo via an embedded <image>. Source: Asana — Wikimedia Commons Special:FilePath -> File:Asana logo.svg</desc>
+  <rect width="100%" height="100%" fill="white"/>
+  <image href="https://commons.wikimedia.org/wiki/Special:FilePath/Asana_logo.svg" x="50" y="25" width="900" height="250" preserveAspectRatio="xMidYMid meet"/>
+</svg>
