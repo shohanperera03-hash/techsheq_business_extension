@@ -6,21 +6,10 @@
     <title>Contact & Book Discovery Call | TECHSHEQ - Your Trusted Global Business Extension</title>
     <meta name="description" content="Book your discovery call with TECHSHEQ. Get urgent IT support or schedule a consultation with our Sri Lankan team. Time-zone aligned business extension services." />
     
-    <!-- TECHSHEQ Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#667eea">
     
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="/js/url-redirect.js"></script>
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftechsheqb1662back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
 <body class="bg-background text-text-primary">
@@ -203,15 +192,26 @@
                         </div>
 
                         <!-- Time Zone Detection -->
-                        <div class="bg-background rounded-lg p-4 mb-6 border border-slate-700/50">
+                        <div class="bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 mb-6 border-2 border-slate-200 shadow-sm">
                             <div class="flex items-center justify-between">
-                                <div>
-                                    <div class="text-sm text-text-secondary">Your Time Zone</div>
-                                    <div class="font-semibold" id="user-timezone">GMT+0 (London)</div>
+                                <div class="flex-1">
+                                    <div class="text-sm text-slate-600 mb-1">Your Local Time</div>
+                                    <div class="font-bold text-lg text-slate-800" id="user-timezone">Detecting...</div>
+                                    <div class="text-xs text-slate-500 mt-1" id="user-time">--:-- --</div>
                                 </div>
-                                <div class="text-right">
-                                    <div class="text-sm text-text-secondary">Sri Lanka Time</div>
-                                    <div class="font-semibold text-accent" id="sri-lanka-time-booking">8:50 PM</div>
+                                <div class="w-px h-12 bg-slate-300 mx-4"></div>
+                                <div class="flex-1 text-right">
+                                    <div class="text-sm text-slate-600 mb-1">Sri Lanka Time</div>
+                                    <div class="font-bold text-lg text-primary" id="sri-lanka-time-booking">--:-- --</div>
+                                    <div class="text-xs text-slate-500 mt-1">UTC+5:30</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <div class="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Live Time Sync
                                 </div>
                             </div>
                         </div>
@@ -255,39 +255,51 @@
                         </div>
 
                         <!-- Contact Form -->
-                        <form id="discovery-call-form" class="space-y-4">
+                        <form id="discovery-call-form" class="space-y-6">
                             <!-- Hidden fields for selected date and time -->
                             <input type="hidden" id="selected-date" name="selected-date" />
                             <input type="hidden" id="selected-time" name="selected-time" />
-                            <div class="grid md:grid-cols-2 gap-4">
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="mobile-form-label">First Name *</label>
-                                    <input type="text" name="firstName" required class="mobile-form-input" placeholder="John" />
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">First Name *</label>
+                                    <input type="text" name="firstName" required 
+                                           class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 placeholder-slate-400 shadow-sm hover:shadow-md focus:shadow-lg" 
+                                           placeholder="John" />
                                 </div>
                                 <div>
-                                    <label class="mobile-form-label">Last Name *</label>
-                                    <input type="text" name="lastName" required class="mobile-form-input" placeholder="Smith" />
+                                    <label class="block text-sm font-semibold text-slate-700 mb-2">Last Name *</label>
+                                    <input type="text" name="lastName" required 
+                                           class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 placeholder-slate-400 shadow-sm hover:shadow-md focus:shadow-lg" 
+                                           placeholder="Smith" />
                                 </div>
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Email Address *</label>
-                                <input type="email" name="email" required class="mobile-form-input" placeholder="john@company.com" />
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
+                                <input type="email" name="email" required 
+                                       class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 placeholder-slate-400 shadow-sm hover:shadow-md focus:shadow-lg" 
+                                       placeholder="john@company.com" />
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Company Name</label>
-                                <input type="text" name="company" class="mobile-form-input" placeholder="Your Company Ltd" />
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Company Name</label>
+                                <input type="text" name="company" 
+                                       class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 placeholder-slate-400 shadow-sm hover:shadow-md focus:shadow-lg" 
+                                       placeholder="Your Company Ltd" />
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Phone Number</label>
-                                <input type="tel" name="phone" class="mobile-form-input" placeholder="+1 (555) 123-4567" />
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                                <input type="tel" name="phone" 
+                                       class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 placeholder-slate-400 shadow-sm hover:shadow-md focus:shadow-lg" 
+                                       placeholder="+1 (555) 123-4567" />
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Budget Range (USD)</label>
-                                <select name="budget" class="mobile-form-input">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Budget Range (USD)</label>
+                                <select name="budget" 
+                                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 shadow-sm hover:shadow-md focus:shadow-lg">
                                     <option value>Select budget range</option>
                                     <option value="5k-15k">$5,000 - $15,000</option>
                                     <option value="15k-50k">$15,000 - $50,000</option>
@@ -297,30 +309,47 @@
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Services of Interest</label>
-                                <div class="grid grid-cols-2 gap-2">
-                                    <label class="flex items-center">
-                                        <input type="checkbox" name="services" value="Software Development" class="mr-2 rounded border-slate-700/50 bg-background focus:ring-primary" />
-                                        <span class="text-sm">Software Development</span>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Services of Interest</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 bg-gradient-to-br from-slate-50 via-white to-slate-50 rounded-xl border-2 border-slate-200 shadow-sm">
+                                    <label class="flex items-center space-x-4 cursor-pointer group hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary/10 p-4 rounded-lg transition-all duration-300 hover:shadow-md">
+                                        <input type="checkbox" name="services" value="Software Development" 
+                                               class="w-5 h-5 text-primary bg-white border-2 border-slate-300 rounded-md focus:ring-primary focus:ring-2 focus:ring-offset-2 transition-all duration-200 group-hover:border-primary/50" />
+                                        <div class="flex-1">
+                                            <span class="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">Software Development</span>
+                                            <p class="text-xs text-slate-500 mt-1">Custom applications & solutions</p>
+                                        </div>
                                     </label>
-                                    <label class="flex items-center">
-                                        <input type="checkbox" name="services" value="Managed IT Services" class="mr-2 rounded border-slate-700/50 bg-background focus:ring-primary" />
-                                        <span class="text-sm">Managed IT Services</span>
+                                    <label class="flex items-center space-x-4 cursor-pointer group hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary/10 p-4 rounded-lg transition-all duration-300 hover:shadow-md">
+                                        <input type="checkbox" name="services" value="Managed IT Services" 
+                                               class="w-5 h-5 text-primary bg-white border-2 border-slate-300 rounded-md focus:ring-primary focus:ring-2 focus:ring-offset-2 transition-all duration-200 group-hover:border-primary/50" />
+                                        <div class="flex-1">
+                                            <span class="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">Managed IT Services</span>
+                                            <p class="text-xs text-slate-500 mt-1">24/7 IT support & maintenance</p>
+                                        </div>
                                     </label>
-                                    <label class="flex items-center">
-                                        <input type="checkbox" name="services" value="HR Services" class="mr-2 rounded border-slate-700/50 bg-background focus:ring-primary" />
-                                        <span class="text-sm">HR Services</span>
+                                    <label class="flex items-center space-x-4 cursor-pointer group hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary/10 p-4 rounded-lg transition-all duration-300 hover:shadow-md">
+                                        <input type="checkbox" name="services" value="HR Services" 
+                                               class="w-5 h-5 text-primary bg-white border-2 border-slate-300 rounded-md focus:ring-primary focus:ring-2 focus:ring-offset-2 transition-all duration-200 group-hover:border-primary/50" />
+                                        <div class="flex-1">
+                                            <span class="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">HR Services</span>
+                                            <p class="text-xs text-slate-500 mt-1">Human resources & recruitment</p>
+                                        </div>
                                     </label>
-                                    <label class="flex items-center">
-                                        <input type="checkbox" name="services" value="Business Administration" class="mr-2 rounded border-slate-700/50 bg-background focus:ring-primary" />
-                                        <span class="text-sm">Business Administration</span>
+                                    <label class="flex items-center space-x-4 cursor-pointer group hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary/10 p-4 rounded-lg transition-all duration-300 hover:shadow-md">
+                                        <input type="checkbox" name="services" value="Business Administration" 
+                                               class="w-5 h-5 text-primary bg-white border-2 border-slate-300 rounded-md focus:ring-primary focus:ring-2 focus:ring-offset-2 transition-all duration-200 group-hover:border-primary/50" />
+                                        <div class="flex-1">
+                                            <span class="text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors">Business Administration</span>
+                                            <p class="text-xs text-slate-500 mt-1">Operations & administrative support</p>
+                                        </div>
                                     </label>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Project Timeline</label>
-                                <select name="timeline" class="mobile-form-input">
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Project Timeline</label>
+                                <select name="timeline" 
+                                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 shadow-sm hover:shadow-md focus:shadow-lg">
                                     <option value>Select timeline</option>
                                     <option value="immediate">Immediate (Within 1 week)</option>
                                     <option value="month">Within 1 month</option>
@@ -330,11 +359,13 @@
                             </div>
 
                             <div>
-                                <label class="mobile-form-label">Tell us about your project</label>
-                                <textarea name="projectDescription" rows="4" class="mobile-form-input" placeholder="Describe your business needs, challenges, or goals..."></textarea>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Tell us about your project</label>
+                                <textarea name="projectDescription" rows="4" 
+                                          class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gradient-to-br from-slate-50 to-white text-slate-800 placeholder-slate-400 resize-none shadow-sm hover:shadow-md focus:shadow-lg" 
+                                          placeholder="Describe your business needs, challenges, or goals..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-full">
+                            <button type="submit" class="btn-primary w-full py-4 text-lg font-semibold">
                                 <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -933,12 +964,18 @@
         function updateTimes() {
             const now = new Date();
             
+            // Get user's timezone
+            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const userTimezoneOffset = now.getTimezoneOffset();
+            const userTimezoneName = userTimezone.split('/')[1] || userTimezone.split('/')[0];
+            
             // Update all time displays
             const times = {
                 'sri-lanka-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
                 'footer-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
                 'sri-lanka-time-booking': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
-                'current-time-live': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Colombo' })
+                'current-time-live': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Colombo' }),
+                'user-time': now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: userTimezone })
             };
 
             Object.keys(times).forEach(id => {
@@ -975,10 +1012,20 @@
                 statusElement.className = isOpen ? 'font-semibold text-green-500' : 'font-semibold text-red-500';
             }
 
-            // Update user timezone (mock)
+            // Update user timezone with real detection
             const userTimezoneElement = document.getElementById('user-timezone');
             if (userTimezoneElement) {
-                userTimezoneElement.textContent = 'GMT+0 (London)';
+                const offsetHours = Math.floor(Math.abs(userTimezoneOffset) / 60);
+                const offsetMinutes = Math.abs(userTimezoneOffset) % 60;
+                const offsetSign = userTimezoneOffset <= 0 ? '+' : '-';
+                const offsetString = `GMT${offsetSign}${offsetHours}${offsetMinutes > 0 ? ':' + offsetMinutes.toString().padStart(2, '0') : ''}`;
+                userTimezoneElement.textContent = `${offsetString} (${userTimezoneName})`;
+            }
+            
+            // Update user's local time in the timezone section
+            const userTimeElement = document.getElementById('user-time');
+            if (userTimeElement) {
+                userTimeElement.textContent = times['user-time'];
             }
         }
 
