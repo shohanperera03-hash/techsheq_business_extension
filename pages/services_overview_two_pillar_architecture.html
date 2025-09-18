@@ -20,7 +20,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 pl-0">
                     <a href="homepage_b2b_service_provider_platform.html" class="flex items-center">
-                        <img src="/public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </a>
                 </div>
 
@@ -852,7 +852,7 @@
                 <!-- Company Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="/public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
+                        <img src="../public/logo.png" alt="TECHSHEQ" style="height: 38px; width: auto;" class="block" />
                     </div>
                     <p class="text-text-secondary mb-4 max-w-md">
                         Your trusted global business extension, delivering cost-effective excellence from Sri Lanka with perfect time-zone alignment.
@@ -937,9 +937,78 @@
                 <button type="submit" class="btn-primary w-full">
                     Send Quote Request
                 </button>
-            </form>
+        </form>
+    </div>
+</div>
+
+<!-- Service Comparison Modal -->
+<div id="comparison-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-surface rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-700/50">
+        <div class="flex justify-between items-center mb-6 p-6 border-b border-slate-700/50">
+            <h3 class="text-2xl font-bold">Service Comparison</h3>
+            <button onclick="closeServiceComparisonModal()" class="text-text-secondary hover:text-text-primary">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="p-6">
+            <!-- Comparison Summary -->
+            <div class="mb-8">
+                <h4 class="text-lg font-semibold mb-4">Selected Services Summary</h4>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="comparison-summary">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Detailed Comparison Table -->
+            <div class="mb-8">
+                <h4 class="text-lg font-semibold mb-4">Detailed Comparison</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-slate-600">
+                        <thead>
+                            <tr class="bg-slate-800">
+                                <th class="border border-slate-600 px-4 py-3 text-left font-semibold">Service</th>
+                                <th class="border border-slate-600 px-4 py-3 text-left font-semibold">Price</th>
+                                <th class="border border-slate-600 px-4 py-3 text-left font-semibold">Category</th>
+                                <th class="border border-slate-600 px-4 py-3 text-left font-semibold">Delivery Time</th>
+                                <th class="border border-slate-600 px-4 py-3 text-left font-semibold">Features</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparison-table-body">
+                            <!-- Dynamic content will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Total Cost & Next Steps -->
+            <div class="bg-primary/10 rounded-lg p-6 mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Package Total</h4>
+                        <div class="text-2xl font-bold text-primary" id="total-cost">$0</div>
+                        <p class="text-sm text-text-secondary mt-1">Estimated monthly cost for selected services</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <button onclick="openQuoteModal('Custom Package')" class="btn-primary">
+                            Get Custom Quote
+                        </button>
+                        <a href="contact_discovery_call_booking.html" class="btn-secondary">
+                            Book Discovery Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Details -->
+            <div id="service-details">
+                <!-- Dynamic content will be inserted here -->
+            </div>
         </div>
     </div>
+</div>
 
     <script>
         // Mobile menu toggle
@@ -949,69 +1018,112 @@
         });
 
         // Service comparison functionality
-        const serviceCheckboxes = document.querySelectorAll('.service-checkbox');
-        const selectedServicesDiv = document.getElementById('selected-services');
-        const getQuoteBtn = document.getElementById('get-custom-quote');
-        const compareBtn = document.getElementById('compare-services');
-        const clearBtn = document.getElementById('clear-selection');
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCheckboxes = document.querySelectorAll('.service-checkbox');
+            const selectedServicesDiv = document.getElementById('selected-services');
+            const getQuoteBtn = document.getElementById('get-custom-quote');
+            const compareBtn = document.getElementById('compare-services');
+            const clearBtn = document.getElementById('clear-selection');
 
-        let selectedServices = [];
+            let selectedServices = [];
 
-        serviceCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateSelectedServices);
-        });
+            // Debug logging
+            console.log('Service Comparison Builder initialized:');
+            console.log('Service checkboxes found:', serviceCheckboxes.length);
+            console.log('Get Quote button found:', !!getQuoteBtn);
+            console.log('Compare button found:', !!compareBtn);
+            console.log('Clear button found:', !!clearBtn);
 
-        clearBtn.addEventListener('click', clearAllSelections);
+            // Check if elements exist before adding event listeners
+            if (serviceCheckboxes.length > 0) {
+                serviceCheckboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', updateSelectedServices);
+                });
+            }
 
-        function updateSelectedServices() {
-            selectedServices = [];
-            serviceCheckboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    selectedServices.push({
-                        name: checkbox.dataset.service,
-                        price: checkbox.dataset.price
-                    });
+            if (clearBtn) {
+                clearBtn.addEventListener('click', clearAllSelections);
+            }
+
+            if (getQuoteBtn) {
+                getQuoteBtn.addEventListener('click', function() {
+                    if (selectedServices.length > 0) {
+                        const serviceNames = selectedServices.map(s => s.name).join(', ');
+                        openQuoteModal(`Custom Package: ${serviceNames}`);
+                    }
+                });
+            }
+
+            if (compareBtn) {
+                compareBtn.addEventListener('click', function() {
+                    if (selectedServices.length > 0) {
+                        openServiceComparisonModal();
+                    }
+                });
+            }
+
+            function updateSelectedServices() {
+                selectedServices = [];
+                serviceCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        selectedServices.push({
+                            name: checkbox.dataset.service,
+                            price: checkbox.dataset.price
+                        });
+                    }
+                });
+
+                updateSelectedServicesDisplay();
+                updateButtonStates();
+            }
+
+            function updateSelectedServicesDisplay() {
+                if (selectedServices.length === 0) {
+                    selectedServicesDiv.innerHTML = '<div class="text-text-secondary text-sm">Select services below to build your custom package</div>';
+                } else {
+                    const servicesHtml = selectedServices.map(service => 
+                        `<span class="inline-flex items-center px-3 py-1 bg-primary/20 text-primary rounded-full text-sm mr-2 mb-2">
+                            ${service.name} (${service.price})
+                        </span>`
+                    ).join('');
+                    selectedServicesDiv.innerHTML = servicesHtml;
                 }
-            });
-
-            updateSelectedServicesDisplay();
-            updateButtonStates();
-        }
-
-        function updateSelectedServicesDisplay() {
-            if (selectedServices.length === 0) {
-                selectedServicesDiv.innerHTML = '<div class="text-text-secondary text-sm">Select services below to build your custom package</div>';
-            } else {
-                const servicesHtml = selectedServices.map(service => 
-                    `<span class="inline-flex items-center px-3 py-1 bg-primary/20 text-primary rounded-full text-sm mr-2 mb-2">
-                        ${service.name} (${service.price})
-                    </span>`
-                ).join('');
-                selectedServicesDiv.innerHTML = servicesHtml;
             }
-        }
 
-        function updateButtonStates() {
-            const hasSelection = selectedServices.length > 0;
-            
-            getQuoteBtn.disabled = !hasSelection;
-            compareBtn.disabled = !hasSelection;
-            
-            if (hasSelection) {
-                getQuoteBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                compareBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            } else {
-                getQuoteBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                compareBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            function updateButtonStates() {
+                const hasSelection = selectedServices.length > 0;
+                console.log('Updating button states. Has selection:', hasSelection, 'Selected services:', selectedServices.length);
+                
+                if (getQuoteBtn) {
+                    getQuoteBtn.disabled = !hasSelection;
+                    if (hasSelection) {
+                        getQuoteBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        console.log('Get Quote button enabled');
+                    } else {
+                        getQuoteBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        console.log('Get Quote button disabled');
+                    }
+                }
+                
+                if (compareBtn) {
+                    compareBtn.disabled = !hasSelection;
+                    if (hasSelection) {
+                        compareBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        console.log('Compare button enabled');
+                    } else {
+                        compareBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        console.log('Compare button disabled');
+                    }
+                }
             }
-        }
 
-        function clearAllSelections() {
-            serviceCheckboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-            updateSelectedServices();
-        }
+            function clearAllSelections() {
+                serviceCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                updateSelectedServices();
+            }
+        });
 
         // Industry tabs functionality
         const industryTabs = document.querySelectorAll('.industry-tab');
@@ -1052,6 +1164,138 @@
             document.getElementById('quote-modal').classList.remove('flex');
         }
 
+        // Service comparison modal functions
+        function openServiceComparisonModal() {
+            populateComparisonModal();
+            document.getElementById('comparison-modal').classList.remove('hidden');
+            document.getElementById('comparison-modal').classList.add('flex');
+        }
+
+        function closeServiceComparisonModal() {
+            document.getElementById('comparison-modal').classList.add('hidden');
+            document.getElementById('comparison-modal').classList.remove('flex');
+        }
+
+        function populateComparisonModal() {
+            // Service details mapping
+            const serviceDetails = {
+                'Website Development': {
+                    category: 'Software Development',
+                    deliveryTime: '2-4 weeks',
+                    features: ['Responsive Design', 'SEO Optimization', 'CMS Integration', 'Performance Optimization'],
+                    description: 'Custom website development with modern technologies and responsive design.'
+                },
+                'Web & Mobile Apps': {
+                    category: 'Software Development',
+                    deliveryTime: '6-12 weeks',
+                    features: ['Cross-Platform', 'Native Performance', 'API Integration', 'Push Notifications'],
+                    description: 'Full-stack web and mobile application development for iOS and Android.'
+                },
+                'Managed IT & Cloud Services': {
+                    category: 'IT Services',
+                    deliveryTime: 'Immediate',
+                    features: ['24/7 Monitoring', 'Cloud Migration', 'Security Management', 'Backup Solutions'],
+                    description: 'Comprehensive IT management including cloud services and infrastructure monitoring.'
+                },
+                'HR Services': {
+                    category: 'Business Support',
+                    deliveryTime: '1-2 weeks',
+                    features: ['Recruitment', 'Payroll Management', 'Employee Relations', 'Compliance'],
+                    description: 'Complete human resources management and administrative support.'
+                },
+                'Administration Services': {
+                    category: 'Business Support',
+                    deliveryTime: '1 week',
+                    features: ['Data Entry', 'Document Management', 'Customer Support', 'Scheduling'],
+                    description: 'Administrative tasks and business process support services.'
+                },
+                'Finance Services': {
+                    category: 'Business Support',
+                    deliveryTime: '1-2 weeks',
+                    features: ['Bookkeeping', 'Financial Reporting', 'Tax Preparation', 'Invoice Management'],
+                    description: 'Financial management and accounting services for business operations.'
+                }
+            };
+
+            // Populate summary cards
+            const summaryContainer = document.getElementById('comparison-summary');
+            summaryContainer.innerHTML = selectedServices.map(service => `
+                <div class="bg-slate-800 rounded-lg p-4 border border-slate-600">
+                    <h5 class="font-semibold text-primary mb-2">${service.name}</h5>
+                    <div class="text-2xl font-bold text-accent mb-1">${service.price}</div>
+                    <div class="text-sm text-text-secondary">${serviceDetails[service.name]?.category || 'Service'}</div>
+                </div>
+            `).join('');
+
+            // Populate comparison table
+            const tableBody = document.getElementById('comparison-table-body');
+            tableBody.innerHTML = selectedServices.map(service => {
+                const details = serviceDetails[service.name] || {};
+                return `
+                    <tr class="hover:bg-slate-800/50">
+                        <td class="border border-slate-600 px-4 py-3 font-semibold">${service.name}</td>
+                        <td class="border border-slate-600 px-4 py-3 text-accent font-semibold">${service.price}</td>
+                        <td class="border border-slate-600 px-4 py-3">${details.category || 'N/A'}</td>
+                        <td class="border border-slate-600 px-4 py-3">${details.deliveryTime || 'N/A'}</td>
+                        <td class="border border-slate-600 px-4 py-3">
+                            <div class="flex flex-wrap gap-1">
+                                ${(details.features || []).map(feature => 
+                                    `<span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded">${feature}</span>`
+                                ).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            // Calculate total cost
+            let totalCost = 0;
+            selectedServices.forEach(service => {
+                const price = service.price;
+                if (price.includes('/month')) {
+                    totalCost += parseInt(price.replace(/[$,]/g, '').split('/')[0]);
+                } else if (price.includes('$')) {
+                    // One-time cost, add as monthly equivalent (divide by 12)
+                    totalCost += parseInt(price.replace(/[$,]/g, '')) / 12;
+                }
+            });
+
+            document.getElementById('total-cost').textContent = `$${Math.round(totalCost).toLocaleString()}/month`;
+
+            // Populate service details
+            const detailsContainer = document.getElementById('service-details');
+            detailsContainer.innerHTML = `
+                <h4 class="text-lg font-semibold mb-4">Service Details</h4>
+                <div class="space-y-6">
+                    ${selectedServices.map(service => {
+                        const details = serviceDetails[service.name] || {};
+                        return `
+                            <div class="bg-slate-800/50 rounded-lg p-4">
+                                <h5 class="font-semibold text-lg mb-2">${service.name}</h5>
+                                <p class="text-text-secondary mb-3">${details.description || 'Professional service delivery.'}</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h6 class="font-semibold text-sm mb-2">Key Features:</h6>
+                                        <ul class="text-sm text-text-secondary space-y-1">
+                                            ${(details.features || []).map(feature => `<li>• ${feature}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-semibold text-sm mb-2">Delivery Info:</h6>
+                                        <div class="text-sm text-text-secondary space-y-1">
+                                            <div><strong>Timeline:</strong> ${details.deliveryTime || 'TBD'}</div>
+                                            <div><strong>Category:</strong> ${details.category || 'General'}</div>
+                                            <div><strong>Investment:</strong> ${service.price}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
         function showCustomPackageBuilder() {
             // Scroll to the service comparison section
             document.querySelector('#selected-services').scrollIntoView({ 
@@ -1080,21 +1324,6 @@
         updateTimes();
         setInterval(updateTimes, 1000);
 
-        // Custom quote button functionality
-        getQuoteBtn.addEventListener('click', function() {
-            if (selectedServices.length > 0) {
-                const serviceNames = selectedServices.map(s => s.name).join(', ');
-                openQuoteModal(`Custom Package: ${serviceNames}`);
-            }
-        });
-
-        // Compare services button functionality
-        compareBtn.addEventListener('click', function() {
-            if (selectedServices.length > 0) {
-                // In a real implementation, this would open a comparison view
-                alert('Service comparison feature coming soon! For now, please book a discovery call to discuss your selected services.');
-            }
-        });
     </script>
 </body>
 </html>
