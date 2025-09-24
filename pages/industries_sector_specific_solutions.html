@@ -10,6 +10,193 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <style>
+        /* Glow Effect for Specific Boxes */
+        .glow-box {
+            position: relative;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #7df9ff, #3B82F6, #10B981, #7df9ff);
+            background-size: 400% 400%;
+            animation: smoothGlow 3s ease-in-out infinite;
+            will-change: transform, background-position;
+            backface-visibility: hidden;
+        }
+
+        .glow-box .glow-content {
+            position: relative;
+            background: #1E293B;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 
+                0 0 20px rgba(125, 249, 255, 0.3),
+                0 0 40px rgba(125, 249, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover effects */
+        .glow-box:hover {
+            animation-duration: 1.5s;
+            opacity: 1;
+            transform: translateY(-2px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .glow-box:hover .glow-content {
+            box-shadow: 
+                0 0 30px rgba(125, 249, 255, 0.5),
+                0 0 60px rgba(125, 249, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes smoothGlow {
+            0%, 100% {
+                background-position: 0% 50%;
+                opacity: 0.8;
+            }
+            25% {
+                background-position: 100% 50%;
+                opacity: 0.9;
+            }
+            50% {
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+            75% {
+                background-position: 0% 50%;
+                opacity: 0.9;
+            }
+        }
+
+        /* Responsive adjustments for glow boxes */
+        @media (max-width: 768px) {
+            .glow-box {
+                padding: 1px;
+            }
+            
+            .glow-box .glow-content {
+                padding: 10px;
+            }
+        }
+
+        /* Industry Tab Styles */
+        .industry-panel {
+            display: none;
+        }
+        
+        .industry-panel.active {
+            display: block;
+        }
+        
+        .industry-tab {
+            transition: all 0.3s ease;
+        }
+        
+        .industry-tab.active {
+            background-color: #3B82F6 !important;
+            color: white !important;
+        }
+        
+        .industry-tab:not(.active) {
+            background-color: transparent;
+            color: #64748B;
+        }
+        
+        .industry-tab:not(.active):hover {
+            background-color: #F1F5F9;
+            color: #1E293B;
+        }
+
+        /* Clean Glowing Border Effect */
+        .electric-border {
+            position: relative;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #7df9ff, #3B82F6, #10B981, #7df9ff);
+            background-size: 400% 400%;
+            animation: smoothGlow 3s ease-in-out infinite;
+        }
+
+        .electric-border-inner {
+            position: relative;
+            background: #1E293B;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 
+                0 0 20px rgba(125, 249, 255, 0.3),
+                0 0 40px rgba(125, 249, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Glowing border variants */
+        .electric-border-primary {
+            background: linear-gradient(45deg, #7df9ff, #3B82F6, #60A5FA, #7df9ff, #3B82F6, #7df9ff);
+            background-size: 400% 400%;
+        }
+
+        .electric-border-accent {
+            background: linear-gradient(45deg, #10B981, #34D399, #6EE7B7, #10B981, #34D399, #10B981);
+            background-size: 400% 400%;
+        }
+
+        .electric-border-warm {
+            background: linear-gradient(45deg, #F59E0B, #F97316, #FB923C, #F59E0B, #F97316, #F59E0B);
+            background-size: 400% 400%;
+        }
+
+        @keyframes smoothGlow {
+            0%, 100% {
+                background-position: 0% 50%;
+                opacity: 0.8;
+            }
+            25% {
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+            50% {
+                background-position: 100% 100%;
+                opacity: 0.9;
+            }
+            75% {
+                background-position: 0% 100%;
+                opacity: 1;
+            }
+        }
+
+        /* Hover effects */
+        .electric-border:hover {
+            animation-duration: 1.5s;
+            opacity: 1;
+            transform: translateY(-2px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .electric-border:hover .electric-border-inner {
+            box-shadow: 
+                0 0 30px rgba(125, 249, 255, 0.5),
+                0 0 60px rgba(125, 249, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .electric-border {
+                padding: 1px;
+            }
+            
+            .electric-border-inner {
+                padding: 10px;
+            }
+        }
+
+        /* Performance optimization */
+        .electric-border {
+            will-change: transform, background-position;
+            backface-visibility: hidden;
+        }
+    </style>
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftechsheqb1662back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
 <body class="bg-background text-text-primary">
@@ -87,7 +274,29 @@
             <!-- Mobile Menu -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 bg-surface rounded-lg mt-2 border border-slate-700/50">
-                    <a href="services_overview_two_pillar_architecture.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">Services</a>
+                    <!-- Mobile Services Dropdown -->
+                    <div class="mobile-services-dropdown">
+                        <button class="mobile-services-toggle w-full text-left px-3 py-2 text-text-secondary hover:text-text-primary flex items-center justify-between">
+                            <span>Services</span>
+                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-services-menu hidden pl-4 mt-1 space-y-1">
+                            <div class="border-l-2 border-primary/20 pl-4">
+                                <h4 class="text-xs font-semibold text-primary mb-2 mt-2">Software Development</h4>
+                                <a href="services_overview_two_pillar_architecture.html#software-development" class="block px-3 py-1 text-sm text-text-secondary hover:text-text-primary">Website Development</a>
+                                <a href="services_overview_two_pillar_architecture.html#software-development" class="block px-3 py-1 text-sm text-text-secondary hover:text-text-primary">Web & Mobile Apps</a>
+                                <a href="managed_it_services_flagship_service_detail.html" class="block px-3 py-1 text-sm text-text-secondary hover:text-text-primary">Managed IT Services</a>
+                            </div>
+                            <div class="border-l-2 border-accent/20 pl-4">
+                                <h4 class="text-xs font-semibold text-accent mb-2 mt-2">Business Support</h4>
+                                <a href="services_overview_two_pillar_architecture.html#business-support" class="block px-3 py-1 text-sm text-text-secondary hover:text-text-primary">HR Services</a>
+                                <a href="services_overview_two_pillar_architecture.html#business-support" class="block px-3 py-1 text-sm text-text-secondary hover:text-text-primary">Administration</a>
+                                <a href="services_overview_two_pillar_architecture.html#business-support" class="block px-3 py-1 text-sm text-text-secondary hover:text-text-primary">Finance Services</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="industries_sector_specific_solutions.html" class="block px-3 py-2 text-primary font-semibold">Industries</a>
                     <a href="about_sri_lankan_business_advantage.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary">About</a>
                     <div class="px-3 py-2">
@@ -233,7 +442,7 @@
 
                     <!-- Service Recommendations -->
                     <div class="grid md:grid-cols-3 gap-6 mb-12">
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
@@ -244,7 +453,7 @@
                             <div class="text-primary text-sm font-semibold">4-8 weeks typical timeline</div>
                         </div>
 
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -255,7 +464,7 @@
                             <div class="text-accent text-sm font-semibold">2-4 weeks implementation</div>
                         </div>
 
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -370,7 +579,7 @@
 
                     <!-- Service Recommendations -->
                     <div class="grid md:grid-cols-3 gap-6 mb-12">
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -381,7 +590,7 @@
                             <div class="text-accent text-sm font-semibold">2-3 weeks setup</div>
                         </div>
 
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -392,7 +601,7 @@
                             <div class="text-primary text-sm font-semibold">Ongoing support</div>
                         </div>
 
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -471,7 +680,7 @@
 
                     <!-- Service Recommendations -->
                     <div class="grid md:grid-cols-3 gap-6 mb-12">
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -482,7 +691,7 @@
                             <div class="text-primary text-sm font-semibold">1-2 weeks optimization</div>
                         </div>
 
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
@@ -493,7 +702,7 @@
                             <div class="text-accent text-sm font-semibold">1 week integration</div>
                         </div>
 
-                        <div class="card group hover:shadow-glow transition-all duration-300">
+                        <div class="glow-box">
                             <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
@@ -571,7 +780,7 @@
                         </div>
                     </div>
 
-                </div>
+                                </div>
             </div>
         </div>
     </section>
@@ -588,7 +797,7 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Tech Startup Case Study -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -616,7 +825,7 @@
                 </div>
 
                 <!-- Professional Services Case Study -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -644,7 +853,7 @@
                 </div>
 
                 <!-- E-commerce Case Study -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
                     <div class="flex items-center mb-4">
                         <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -814,31 +1023,105 @@
     </div>
 
     <script>
+        // Apply glow effect to all glow-box cards
+        function applyGlowEffect() {
+            const glowBoxes = document.querySelectorAll('.glow-box');
+            
+            glowBoxes.forEach((box) => {
+                // Skip if already has glow-content wrapper
+                if (box.querySelector('.glow-content')) return;
+                
+                // Wrap content in glow-content div
+                const content = box.innerHTML;
+                box.innerHTML = `<div class="glow-content">${content}</div>`;
+            });
+            
+            console.log(`Glow effect applied to ${glowBoxes.length} boxes`);
+        }
+
+        // Apply glow effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            applyGlowEffect();
+        });
+
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Mobile services dropdown functionality
+        const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
+        const mobileServicesMenu = document.querySelector('.mobile-services-menu');
+        
+        if (mobileServicesToggle && mobileServicesMenu) {
+            const mobileServicesIcon = mobileServicesToggle.querySelector('svg');
+            
+            mobileServicesToggle.addEventListener('click', function() {
+                const isHidden = mobileServicesMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileServicesMenu.classList.remove('hidden');
+                    mobileServicesIcon.style.transform = 'rotate(180deg)';
+                } else {
+                    mobileServicesMenu.classList.add('hidden');
+                    mobileServicesIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+
         // Industry tab functionality
+        // Industry tabs functionality
         const industryTabs = document.querySelectorAll('.industry-tab');
         const industryPanels = document.querySelectorAll('.industry-panel');
 
+        console.log('Industry tabs found:', industryTabs.length);
+        console.log('Industry panels found:', industryPanels.length);
+
         industryTabs.forEach(tab => {
             tab.addEventListener('click', function() {
+                console.log('Tab clicked:', this.getAttribute('data-industry'));
+                
                 const industry = this.getAttribute('data-industry');
                 
                 // Remove active class from all tabs and panels
-                industryTabs.forEach(t => t.classList.remove('active', 'bg-primary', 'text-white'));
-                industryPanels.forEach(p => p.classList.remove('active'));
+                industryTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('text-text-secondary', 'hover:text-text-primary', 'hover:bg-surface');
+                });
+                industryPanels.forEach(p => {
+                    p.classList.remove('active');
+                    p.style.display = 'none';
+                });
                 
                 // Add active class to clicked tab
                 this.classList.add('active', 'bg-primary', 'text-white');
+                this.classList.remove('text-text-secondary', 'hover:text-text-primary', 'hover:bg-surface');
                 
                 // Show corresponding panel
-                document.getElementById(industry).classList.add('active');
+                const targetPanel = document.getElementById(industry);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    targetPanel.style.display = 'block';
+                    console.log('Showing panel:', industry);
+                } else {
+                    console.error('Panel not found:', industry);
+                }
             });
         });
+
+        // Initialize - show the first panel
+        if (industryPanels.length > 0) {
+            industryPanels.forEach((panel, index) => {
+                if (index === 0) {
+                    panel.classList.add('active');
+                    panel.style.display = 'block';
+                } else {
+                    panel.classList.remove('active');
+                    panel.style.display = 'none';
+                }
+            });
+        }
 
         // ROI Calculator for startups
         const startupBudget = document.getElementById('startup-budget');
@@ -861,6 +1144,128 @@
         const recommendationChallenge = document.getElementById('recommendation-challenge');
         const serviceRecommendations = document.getElementById('service-recommendations');
         const recommendationsList = document.getElementById('recommendations-list');
+
+        // Industry-specific challenges configuration
+        const industryChallenges = {
+            'tech-startup': [
+                { value: 'scaling', label: 'Rapid scaling needs' },
+                { value: 'costs', label: 'Cost optimization' },
+                { value: 'performance', label: 'Performance issues' },
+                { value: 'security', label: 'Security concerns' },
+                { value: 'support', label: '24/7 support needs' },
+                { value: 'integration', label: 'System integration' },
+                { value: 'funding', label: 'Funding and investor readiness' },
+                { value: 'mvp', label: 'MVP development' }
+            ],
+            'professional-services': [
+                { value: 'costs', label: 'Cost optimization' },
+                { value: 'admin', label: 'Administrative overhead' },
+                { value: 'compliance', label: 'Compliance requirements' },
+                { value: 'automation', label: 'Process automation' },
+                { value: 'client', label: 'Client management' },
+                { value: 'billing', label: 'Billing and invoicing' },
+                { value: 'scheduling', label: 'Appointment scheduling' }
+            ],
+            'ecommerce': [
+                { value: 'costs', label: 'Cost optimization' },
+                { value: 'performance', label: 'Website performance' },
+                { value: 'security', label: 'Payment security' },
+                { value: 'inventory', label: 'Inventory management' },
+                { value: 'customer', label: 'Customer support' },
+                { value: 'marketing', label: 'Marketing automation' },
+                { value: 'analytics', label: 'Analytics and reporting' }
+            ],
+            'financial': [
+                { value: 'costs', label: 'Cost optimization' },
+                { value: 'compliance', label: 'Regulatory compliance' },
+                { value: 'security', label: 'Data security' },
+                { value: 'reporting', label: 'Financial reporting' },
+                { value: 'audit', label: 'Audit preparation' },
+                { value: 'risk', label: 'Risk management' },
+                { value: 'fraud', label: 'Fraud detection' }
+            ]
+        };
+
+        // Common challenges that appear for all industries
+        const commonChallenges = [
+            { value: 'costs', label: 'Cost optimization' }
+        ];
+
+        // Electric Border utility functions
+        function generateElectricBorderId() {
+            return 'electric-border-' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function createElectricBorder(content, variant = 'primary', index = 0) {
+            const borderVariants = ['electric-border-primary', 'electric-border-accent', 'electric-border-warm'];
+            const selectedVariant = borderVariants[index % borderVariants.length];
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = `electric-border ${selectedVariant}`;
+            
+            const inner = document.createElement('div');
+            inner.className = 'electric-border-inner';
+            inner.innerHTML = content;
+            
+            wrapper.appendChild(inner);
+            return wrapper;
+        }
+
+        // Function to populate challenges dropdown based on selected industry
+        function populateChallenges(industry) {
+            console.log('Populating challenges for industry:', industry);
+            
+            // Clear existing options except the default
+            recommendationChallenge.innerHTML = '<option value>Select main challenge</option>';
+            
+            if (!industry || !industryChallenges[industry]) {
+                console.log('No industry selected or industry not found, showing only common challenges');
+                // If no industry selected or industry not found, show only common challenges
+                commonChallenges.forEach(challenge => {
+                    const option = document.createElement('option');
+                    option.value = challenge.value;
+                    option.textContent = challenge.label;
+                    recommendationChallenge.appendChild(option);
+                });
+                return;
+            }
+
+            // Get industry-specific challenges and combine with common challenges
+            const industrySpecificChallenges = industryChallenges[industry];
+            const allChallenges = [...industrySpecificChallenges];
+
+            // Add common challenges if not already present
+            commonChallenges.forEach(commonChallenge => {
+                if (!allChallenges.find(challenge => challenge.value === commonChallenge.value)) {
+                    allChallenges.unshift(commonChallenge); // Add common challenges at the top
+                }
+            });
+
+            console.log('Available challenges for', industry, ':', allChallenges);
+
+            // Populate the dropdown
+            allChallenges.forEach(challenge => {
+                const option = document.createElement('option');
+                option.value = challenge.value;
+                option.textContent = challenge.label;
+                recommendationChallenge.appendChild(option);
+            });
+        }
+
+        // Event listener for industry dropdown change
+        recommendationIndustry.addEventListener('change', function() {
+            const selectedIndustry = this.value;
+            populateChallenges(selectedIndustry);
+            
+            // Clear challenge selection and hide recommendations
+            recommendationChallenge.value = '';
+            serviceRecommendations.classList.add('hidden');
+        });
+
+        // Event listener for challenge dropdown change
+        recommendationChallenge.addEventListener('change', function() {
+            generateRecommendations();
+        });
 
         const recommendations = {
             'tech-startup': {
@@ -888,6 +1293,18 @@
                     { service: '24/7 Technical Support', description: 'Round-the-clock technical assistance', timeline: 'Immediate' },
                     { service: 'Dedicated Support Team', description: 'Dedicated support engineers', timeline: '1-2 weeks' },
                     { service: 'Incident Response', description: 'Fast incident resolution', timeline: 'Immediate' }
+                ],
+                'integration': [
+                    { service: 'System Integration Services', description: 'Connect all your systems seamlessly', timeline: '2-4 weeks' },
+                    { service: 'API Development & Integration', description: 'Custom API solutions', timeline: '3-5 weeks' }
+                ],
+                'funding': [
+                    { service: 'Technical Due Diligence', description: 'Prepare technical documentation for investors', timeline: '2-3 weeks' },
+                    { service: 'MVP Development', description: 'Minimum viable product development', timeline: '6-12 weeks' }
+                ],
+                'mvp': [
+                    { service: 'MVP Development', description: 'Fast-track minimum viable product', timeline: '4-8 weeks' },
+                    { service: 'Prototype Development', description: 'Rapid prototype creation', timeline: '2-4 weeks' }
                 ]
             },
             'professional-services': {
@@ -910,6 +1327,26 @@
                     { service: 'System Integration', description: 'Connect existing systems', timeline: '4-6 weeks' },
                     { service: 'API Development', description: 'Custom API development', timeline: '3-4 weeks' },
                     { service: 'Data Migration', description: 'Seamless data transfer', timeline: '2-4 weeks' }
+                ],
+                'costs': [
+                    { service: 'Cost Optimization', description: 'Reduce operational costs by 40%', timeline: '2-3 weeks' },
+                    { service: 'Process Efficiency', description: 'Streamline business processes', timeline: '3-4 weeks' },
+                    { service: 'Resource Optimization', description: 'Optimize resource allocation', timeline: '1-2 weeks' }
+                ],
+                'client': [
+                    { service: 'CRM Implementation', description: 'Customer relationship management', timeline: '2-3 weeks' },
+                    { service: 'Client Portal', description: 'Self-service client portal', timeline: '3-4 weeks' },
+                    { service: 'Communication Tools', description: 'Streamlined client communication', timeline: '1-2 weeks' }
+                ],
+                'billing': [
+                    { service: 'Billing Automation', description: 'Automated invoicing and billing', timeline: '2-3 weeks' },
+                    { service: 'Payment Processing', description: 'Online payment solutions', timeline: '1-2 weeks' },
+                    { service: 'Financial Reporting', description: 'Automated financial reports', timeline: '2-3 weeks' }
+                ],
+                'scheduling': [
+                    { service: 'Appointment Scheduling', description: 'Online booking system', timeline: '1-2 weeks' },
+                    { service: 'Calendar Integration', description: 'Sync with existing calendars', timeline: '1 week' },
+                    { service: 'Automated Reminders', description: 'Client reminder system', timeline: '1 week' }
                 ]
             },
             'ecommerce': {
@@ -932,6 +1369,31 @@
                     { service: 'Customer Support', description: '24/7 customer service', timeline: '1 week' },
                     { service: 'Technical Support', description: 'Platform technical assistance', timeline: 'Immediate' },
                     { service: 'Maintenance Support', description: 'Ongoing platform maintenance', timeline: 'Ongoing' }
+                ],
+                'costs': [
+                    { service: 'Cost Optimization', description: 'Reduce operational costs by 35%', timeline: '2-3 weeks' },
+                    { service: 'Infrastructure Optimization', description: 'Optimize hosting and CDN costs', timeline: '1-2 weeks' },
+                    { service: 'Process Automation', description: 'Automate manual processes', timeline: '3-4 weeks' }
+                ],
+                'inventory': [
+                    { service: 'Inventory Management System', description: 'Real-time inventory tracking', timeline: '2-3 weeks' },
+                    { service: 'Stock Optimization', description: 'Optimize stock levels', timeline: '2-4 weeks' },
+                    { service: 'Supplier Integration', description: 'Connect with suppliers', timeline: '3-4 weeks' }
+                ],
+                'customer': [
+                    { service: 'Customer Support System', description: 'Comprehensive customer service', timeline: '1-2 weeks' },
+                    { service: 'Live Chat Integration', description: 'Real-time customer support', timeline: '1 week' },
+                    { service: 'Customer Analytics', description: 'Customer behavior insights', timeline: '2-3 weeks' }
+                ],
+                'marketing': [
+                    { service: 'Marketing Automation', description: 'Automated marketing campaigns', timeline: '2-3 weeks' },
+                    { service: 'Email Marketing', description: 'Email campaign management', timeline: '1-2 weeks' },
+                    { service: 'Social Media Integration', description: 'Social media management', timeline: '2-3 weeks' }
+                ],
+                'analytics': [
+                    { service: 'Business Intelligence', description: 'Comprehensive analytics dashboard', timeline: '2-3 weeks' },
+                    { service: 'Sales Analytics', description: 'Sales performance tracking', timeline: '1-2 weeks' },
+                    { service: 'Customer Analytics', description: 'Customer behavior analysis', timeline: '2-3 weeks' }
                 ]
             },
             'financial': {
@@ -954,11 +1416,36 @@
                     { service: 'Payment Gateway Integration', description: 'Multiple payment systems', timeline: '2-3 weeks' },
                     { service: 'Banking API Integration', description: 'Bank system connectivity', timeline: '3-4 weeks' },
                     { service: 'Financial Software Integration', description: 'Accounting system integration', timeline: '2-4 weeks' }
+                ],
+                'costs': [
+                    { service: 'Cost Optimization', description: 'Reduce operational costs by 45%', timeline: '2-3 weeks' },
+                    { service: 'Process Automation', description: 'Automate financial processes', timeline: '3-4 weeks' },
+                    { service: 'Resource Optimization', description: 'Optimize financial resources', timeline: '2-3 weeks' }
+                ],
+                'reporting': [
+                    { service: 'Financial Reporting', description: 'Automated financial reports', timeline: '2-3 weeks' },
+                    { service: 'Dashboard Development', description: 'Real-time financial dashboard', timeline: '3-4 weeks' },
+                    { service: 'Compliance Reporting', description: 'Regulatory reporting automation', timeline: '4-5 weeks' }
+                ],
+                'audit': [
+                    { service: 'Audit Preparation', description: 'Comprehensive audit readiness', timeline: '3-4 weeks' },
+                    { service: 'Document Management', description: 'Audit document organization', timeline: '2-3 weeks' },
+                    { service: 'Compliance Tracking', description: 'Track compliance requirements', timeline: '2-4 weeks' }
+                ],
+                'risk': [
+                    { service: 'Risk Assessment', description: 'Comprehensive risk evaluation', timeline: '2-3 weeks' },
+                    { service: 'Risk Monitoring', description: 'Real-time risk tracking', timeline: '1-2 weeks' },
+                    { service: 'Risk Mitigation', description: 'Risk reduction strategies', timeline: '3-4 weeks' }
+                ],
+                'fraud': [
+                    { service: 'Fraud Detection System', description: 'Advanced fraud prevention', timeline: '2-3 weeks' },
+                    { service: 'Transaction Monitoring', description: 'Real-time transaction analysis', timeline: '1-2 weeks' },
+                    { service: 'Security Analytics', description: 'Fraud pattern analysis', timeline: '2-3 weeks' }
                 ]
             }
         };
 
-        function updateRecommendations() {
+        function generateRecommendations() {
             const industry = recommendationIndustry.value;
             const challenge = recommendationChallenge.value;
 
@@ -966,20 +1453,23 @@
                 const recs = recommendations[industry][challenge];
                 recommendationsList.innerHTML = '';
 
-                recs.forEach(rec => {
-                    const recElement = document.createElement('div');
-                    recElement.className = 'flex items-start space-x-3 p-3 bg-background rounded-lg';
-                    recElement.innerHTML = `
-                        <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                recs.forEach((rec, index) => {
+                    const content = `
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
                         </svg>
                         <div class="flex-1">
-                            <h4 class="font-semibold">${rec.service}</h4>
-                            <p class="text-sm text-text-secondary mb-1">${rec.description}</p>
-                            <span class="text-xs text-primary font-semibold">${rec.timeline}</span>
+                                <h4 class="font-semibold text-text-primary mb-1">${rec.service}</h4>
+                                <p class="text-sm text-text-secondary mb-2">${rec.description}</p>
+                                <span class="text-xs text-primary font-semibold bg-primary/10 px-2 py-1 rounded-full">${rec.timeline}</span>
+                            </div>
                         </div>
                     `;
-                    recommendationsList.appendChild(recElement);
+                    
+                    const electricBorder = createElectricBorder(content, 'primary', index);
+                    console.log('Created electric border:', electricBorder.className);
+                    recommendationsList.appendChild(electricBorder);
                 });
 
                 serviceRecommendations.classList.remove('hidden');

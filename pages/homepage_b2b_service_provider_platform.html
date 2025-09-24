@@ -10,6 +10,92 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <style>
+        /* Electric Border Effect */
+        .electric-border {
+            position: relative;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #7df9ff, #3B82F6, #10B981, #7df9ff);
+            background-size: 400% 400%;
+            animation: smoothGlow 3s ease-in-out infinite;
+            will-change: transform, background-position;
+            backface-visibility: hidden;
+        }
+
+        .electric-border::before,
+        .electric-border::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 14px;
+            background: linear-gradient(45deg, #7df9ff, #3B82F6, #10B981, #7df9ff);
+            background-size: 400% 400%;
+            animation: smoothGlow 3s ease-in-out infinite;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .electric-border-inner {
+            position: relative;
+            background: #1E293B;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 
+                0 0 20px rgba(125, 249, 255, 0.3),
+                0 0 40px rgba(125, 249, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover effects */
+        .electric-border:hover {
+            animation-duration: 1.5s;
+            opacity: 1;
+            transform: translateY(-2px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .electric-border:hover .electric-border-inner {
+            box-shadow: 
+                0 0 30px rgba(125, 249, 255, 0.5),
+                0 0 60px rgba(125, 249, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes smoothGlow {
+            0%, 100% {
+                background-position: 0% 50%;
+                opacity: 0.8;
+            }
+            25% {
+                background-position: 100% 50%;
+                opacity: 0.9;
+            }
+            50% {
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+            75% {
+                background-position: 0% 50%;
+                opacity: 0.9;
+            }
+        }
+
+        /* Responsive adjustments for electric borders */
+        @media (max-width: 768px) {
+            .electric-border {
+                padding: 1px;
+            }
+            
+            .electric-border-inner {
+                padding: 10px;
+            }
+        }
+    </style>
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftechsheqb1662back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
 <body class="bg-background text-text-primary">
@@ -114,7 +200,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative py-16 lg:py-24 flex items-center justify-center overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #315CAA 0%, transparent 50%), radial-gradient(circle at 75% 75%, #22C55E 0%, transparent 50%);"></div>
@@ -206,7 +292,7 @@
 
             <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Software Development Pillar -->
-                <div class="group card hover:shadow-glow transition-all duration-300 cursor-pointer" onclick="window.location.href='services_overview_two_pillar_architecture.html'">
+                <div class="electric-border cursor-pointer" onclick="window.location.href='services_overview_two_pillar_architecture.html'">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,7 +323,7 @@
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors">
+                        <div class="flex items-start space-x-3 p-3 rounded-lg hover:bg-background/50 transition-colors cursor-pointer" onclick="event.stopPropagation(); window.location.href='managed_it_services_flagship_service_detail.html'">
                             <svg class="w-5 h-5 text-accent mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
                             </svg>
@@ -250,7 +336,7 @@
                 </div>
 
                 <!-- Business Support Pillar -->
-                <div class="group card hover:shadow-glow transition-all duration-300 cursor-pointer" onclick="window.location.href='services_overview_two_pillar_architecture.html'">
+                <div class="electric-border cursor-pointer" onclick="window.location.href='services_overview_two_pillar_architecture.html'">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -308,7 +394,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Time Zone Alignment -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="electric-border text-center">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10"/>
@@ -321,7 +407,7 @@
                 </div>
 
                 <!-- Cost Effectiveness -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="electric-border text-center">
                     <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
@@ -333,7 +419,7 @@
                 </div>
 
                 <!-- Security & Compliance -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="electric-border text-center">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -345,7 +431,7 @@
                 </div>
 
                 <!-- Cultural Compatibility -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="electric-border text-center">
                     <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -369,7 +455,7 @@
                 </p>
             </div>
 
-            <div class="card max-w-6xl mx-auto">
+            <div class="electric-border max-w-6xl mx-auto">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Asia -->
                     <div class="text-center">
@@ -498,14 +584,14 @@
                 <h3 class="text-xl font-semibold text-text-primary mb-6">Cloud & DevOps</h3>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <!-- AWS -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="AWS – Cloud Infrastructure">
+                    <div class="electric-border text-center p-4" aria-label="AWS – Cloud Infrastructure">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Cloud Services" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/01/30/06/42/typing-5962596_1280.jpg'; this.onerror=null;" />
                         <h4 class="font-semibold text-sm text-text-primary">AWS</h4>
                         <p class="text-xs text-text-secondary mt-1">Cloud Infrastructure</p>
                 </div>
 
                     <!-- Azure -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Azure – Cloud Infrastructure">
+                    <div class="electric-border text-center p-4" aria-label="Azure – Cloud Infrastructure">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure_Logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">☁️</span>
@@ -515,7 +601,7 @@
                 </div>
 
                 <!-- Docker -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Docker – Containerization">
+                    <div class="electric-border text-center p-4" aria-label="Docker – Containerization">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/docker.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🐳</span>
@@ -525,21 +611,21 @@
                 </div>
 
                 <!-- Kubernetes -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Kubernetes – Orchestration">
+                    <div class="electric-border text-center p-4" aria-label="Kubernetes – Orchestration">
                         <img src="https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes Orchestration" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.png'; this.onerror=null;" />
                         <h4 class="font-semibold text-sm text-text-primary">Kubernetes</h4>
                     <p class="text-xs text-text-secondary mt-1">Orchestration</p>
                 </div>
 
                     <!-- Linux -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Linux – Operating System">
+                    <div class="electric-border text-center p-4" aria-label="Linux – Operating System">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux Operating System" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg'; this.onerror=null;" />
                         <h4 class="font-semibold text-sm text-text-primary">Linux</h4>
                         <p class="text-xs text-text-secondary mt-1">Operating System</p>
                 </div>
 
                     <!-- GitHub -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="GitHub – Source Control & CI">
+                    <div class="electric-border text-center p-4" aria-label="GitHub – Source Control & CI">
                         <img src="https://images.seeklogo.com/logo-png/30/1/github-logo-png_seeklogo-304612.png" alt="GitHub" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🐙</span>
@@ -549,7 +635,7 @@
             </div>
 
                     <!-- GitLab -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="GitLab – Source Control & CI">
+                    <div class="electric-border text-center p-4" aria-label="GitLab – Source Control & CI">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://about.gitlab.com/images/press/logo/svg/gitlab-logo-700.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🦊</span>
@@ -559,7 +645,7 @@
                 </div>
 
                     <!-- Grafana -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Grafana – Monitoring & Visualization">
+                    <div class="electric-border text-center p-4" aria-label="Grafana – Monitoring & Visualization">
                         <img src="https://images.seeklogo.com/logo-png/33/2/grafana-logo-png_seeklogo-336117.png" alt="Grafana" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/grafana.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">📊</span>
@@ -569,7 +655,7 @@
                     </div>
 
                     <!-- Nagios -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Nagios – Infrastructure Monitoring">
+                    <div class="electric-border text-center p-4" aria-label="Nagios – Infrastructure Monitoring">
                         <img src="https://images.seeklogo.com/logo-png/34/1/nagios-logo-png_seeklogo-342383.png" alt="Nagios" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/nagios.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🔍</span>
@@ -579,7 +665,7 @@
                     </div>
 
                     <!-- Prometheus -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Prometheus – Metrics & Alerting">
+                    <div class="electric-border text-center p-4" aria-label="Prometheus – Metrics & Alerting">
                         <img src="https://images.seeklogo.com/logo-png/27/1/prometheus-logo-png_seeklogo-273822.png" alt="Prometheus" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/prometheus.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">⚡</span>
@@ -596,7 +682,7 @@
                 <h3 class="text-xl font-semibold text-text-primary mb-6">Project & Productivity</h3>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     <!-- Monday.com -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Monday.com – Project Management">
+                    <div class="electric-border text-center p-4" aria-label="Monday.com – Project Management">
                         <img src="https://images.seeklogo.com/logo-png/39/1/monday-logo-png_seeklogo-394606.png" alt="Monday.com" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/mondaydotcom.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">📅</span>
@@ -606,7 +692,7 @@
                     </div>
 
                     <!-- Asana -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Asana – Project Management">
+                    <div class="electric-border text-center p-4" aria-label="Asana – Project Management">
                         <img src="https://images.seeklogo.com/logo-png/52/1/asana-logo-png_seeklogo-525124.png" alt="Asana" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5a/Asana_logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">📋</span>
@@ -616,7 +702,7 @@
                     </div>
 
                     <!-- ClickUp -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="ClickUp – Project Management">
+                    <div class="electric-border text-center p-4" aria-label="ClickUp – Project Management">
                         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/clickup.svg" alt="ClickUp" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://worldvectorlogo.com/logo/clickup.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">⚡</span>
@@ -626,7 +712,7 @@
                     </div>
 
                     <!-- Jira -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Jira – Issue Tracking">
+                    <div class="electric-border text-center p-4" aria-label="Jira – Issue Tracking">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="Jira" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/85/Jira_Logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🎫</span>
@@ -636,7 +722,7 @@
                     </div>
 
                     <!-- CAKE.com -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="CAKE.com – Time & Scheduling">
+                    <div class="electric-border text-center p-4" aria-label="CAKE.com – Time & Scheduling">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfjvQZHnbMxmHmzcFIM-Xo73yzctzDv1eTnB5QU8OwROaLfFok-vnuiNIYUNQiTu2euhI&usqp=CAU" alt="CAKE.com" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/cake.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🍰</span>
@@ -646,14 +732,14 @@
                     </div>
 
                     <!-- Notion -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Notion – Knowledge & Docs">
+                    <div class="electric-border text-center p-4" aria-label="Notion – Knowledge & Docs">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg'; this.onerror=null;" />
                         <h4 class="font-semibold text-sm text-text-primary">Notion</h4>
                         <p class="text-xs text-text-secondary mt-1">Knowledge & Docs</p>
                     </div>
 
                     <!-- Atlassian -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Atlassian – Tool Suite">
+                    <div class="electric-border text-center p-4" aria-label="Atlassian – Tool Suite">
                         <img src="https://images.seeklogo.com/logo-png/32/1/atlassian-logo-png_seeklogo-326273.png" alt="Atlassian" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5e/Atlassian-logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🔧</span>
@@ -669,7 +755,7 @@
                 <h3 class="text-xl font-semibold text-text-primary mb-6">Accounting & Timekeeping</h3>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     <!-- Xero -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Xero – Accounting">
+                    <div class="electric-border text-center p-4" aria-label="Xero – Accounting">
                         <img src="https://en.wikipedia.org/wiki/Special:FilePath/Xero_software_logo.svg" alt="Xero Accounting" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/3f/Xero_software_logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">💰</span>
@@ -679,7 +765,7 @@
                     </div>
 
                     <!-- Harvest -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Harvest – Time Tracking & Invoicing">
+                    <div class="electric-border text-center p-4" aria-label="Harvest – Time Tracking & Invoicing">
                         <img src="https://images.seeklogo.com/logo-png/48/1/harvest-logo-png_seeklogo-485567.png" alt="Harvest" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://worldvectorlogo.com/logo/harvest-1.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">⏰</span>
@@ -695,7 +781,7 @@
                 <h3 class="text-xl font-semibold text-text-primary mb-6">CRM & Sales Ops</h3>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     <!-- Salesforce -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Salesforce – CRM">
+                    <div class="electric-border text-center p-4" aria-label="Salesforce – CRM">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" alt="Salesforce" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Salesforce.com%20logo.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">💼</span>
@@ -705,7 +791,7 @@
                     </div>
 
                     <!-- Pricefinder -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="Pricefinder – Real Estate Data">
+                    <div class="electric-border text-center p-4" aria-label="Pricefinder – Real Estate Data">
                         <img src="https://images.seeklogo.com/logo-png/33/1/pricefinder-logo-png_seeklogo-339193.png" alt="Pricefinder" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/pricefinder.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🏘️</span>
@@ -715,7 +801,7 @@
                     </div>
 
                     <!-- VaultRE -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="VaultRE – Real Estate CRM">
+                    <div class="electric-border text-center p-4" aria-label="VaultRE – Real Estate CRM">
                         <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBhIIBxIWFRUVFRcaGRUWGBoZHRcWFhoeHRsnIB0dHTQgGyYnHh0YIjEjJSotLi8uFx8zODMtNyktMisBCgoKDg0OGxAQGzclICUzNS0tLzctLTUwMDUtMC4tLy0tNi0tLS0tLS0tLi0tKy0tLSstLS0tLS0tLS0tLSstLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcDBAUBAgj/xABEEAACAQIEAwQFBwkHBQAAAAAAAQIDEQQFBhInETQVFhYhMXGBkbEUIzZ0kaGzFTM1N3JzgrTRQlKSssHC4RYkQ1SD/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAKhEBAAIBAgQEBgMAAAAAAAAAAAECEQMSEyExUQQzYXEUIjJBgZEjscH/2gAMAwEAAhEDEQA/ALxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8bsekb4h5jisp0pWx+AltqQdOzsl1qRT5NWd02iYjM4VtbbGUjuLlX0tD4yvkKzupjsR8rdPtVPf6Kk47ttrXt3dfdbkYdNacxeucq/LueYuupTclTjSkoxgoPbe1rdU+lv6X2R3ZcW3Tata5ixOIhhqLq1eiK70bm+avDV8lxlVznh8Q6PaPm5Ru0rt8+sXz62a8Dq63p4jI9K1sxwFWaqQ7Pm7NNupFdHyferPqmcdtS86s6VI6ff3/tpGpE03JjRqxrUlVh0aujIaOSYuWOyehi5pJ1KUJNLonKKfI3jeImOq8TkAPmU4wV5uy8yR9A8TTPQAAAAAAAAAAAAAAAAAAAAAAAABH9dZRis90xWy3Abd89lt7aXozUndpPuXgSAj2vKmZUNMVsVk9R06lJb7pRd4x5zVpJr1b/AGE16qXxtnLew+DrU8gjgJW3KgoeW5Q29fC5z9BZNi9P6WpZZj3HfB1G9jbXpTlJWbSfRruIrwn1bmOc46vgc4q9pLZGcG1FWSdp+ql4w+82OLOqcfkccPhcoqunOblOUkov0I8kvST6t3/hNNlt2xlGpTZxOzdyPS2Y4DOsXjK7p7a2K7WNpNvZuk+a28nZrxJHqXKIZ7kVbLJvb2kbKXXbJc4u3fZpMgNHWmZ5FoejmGaS7fE4qc3SjNRio01yTe1K6tZ+L3rmR/CZjxE1FReYYCVZ07uzp7KceXVRTs5feVroTF5vnr/inGpEbYiZyuTIsLUwOT0MHXtup0oRdul4xSdjeKh0NxDzT8swynUL3qctim4qM4VL2SlZWavy6XRrab1hqHF65pZficTKVJ15xcNtOzit1ldRv3LvLTpW5rR4imIx7LnuRPin9BMV/wDP8WB1tWYqvgtM4rFYSW2cKM5RlydpJcuvIpelqbOs70/j6Ga15VIxo05JOMFaXyikr+jFdzI06TPNOvqxX5e8JpwWznGY7A4jL8XJzjRdNwcndqNTd6N/BOF17TsrX+DpauqafxtNwanGEKu68ZSkk0mrJxu3ZdfcV/w/ecrJcxenN3b/APabdu29t9Td6/LpcjmbSzX8uzlmm75Tvjuvtvv5bfV9H+70N50om0uaNe1dOr9OHpCuHU9VyeI/6r3/ANjs96pr+9uts/h6kj1BnGGyLKKmY4z1YLousm3ZJebbSOaa4nDureJru6OiCipaq1pqvMJU8mc4pc+zoWioJ9N03z97av3I+8HrXVels0+TZ9vmuTlSq23bX3wmuv2tcjTgW/LD4qvacd15C5UHEXWebYTNaEshxMoUauGp1ElGDvvlLn6UW+iRwKuq9a5y/lGDnX2xSXzEHtukrttLm31afj0REaMzGU28VWJxhf55cpDUuuNRZbqqtQoYh9nTqR+bcYWaSi2m9u6z5rrfmYc0zTiFUwzzbFPEU6Vt14JQjGPnFelbzl9pPBnuifFV54ieS9bi5RuX8TdQrLHl8UqtaUkoVdt5WfVbUrSfSz9t0zUzHN9e5NKOLzOpiKak+Tnba31ta21cr8rdw4Fuh8XXGYiV+npFOHWp6mp8ldbFJKrTlsnbo+V00u66+9MlZlMTE4l0VtFozAACFgAAAAAPipTjVpunUV00014p9T7AH5/yTdpDiRHD1XaMKzpNvvp1OUX9ji/cZNd1qmpeIUsDhne04UI+W12k/dJz+w7HG3KXh80oZtSXKpFwk/CcOcfe03/gNbg9lk8y1RUzTEel2MW9z6urV5X+ze/ejszG3iejzJrO7heuU11xW0zkOUUFm2GhXcI9nQpOKbskk+b9Vco3fsIdl/EDUMsMsPpzAU40oXtGnSqVFHne142XV/eZeOGHrrNcNiWn2bpuKfcpqTb9js19j8DqaZ4jaeyvTFHC1IzjUpwUXTjBvdJdWpdPSfPm11KVr8kTjLW9/wCSa524VysTisXrGGJx0dlSWKpynGzjtk6kbqz5r3nS0l+sul9aqf7zmyzFZnrBZlJbVUxUJ2vfanUXebPyipprXksTiYt9jiZtx73Ft9PbGV17UbTHLHo5Ynnn1Xhrj6H439xU/wArKHyL9DZj9Xp/zFIsHWHErJ8fp+rgctjUnOrBw9KO1RUuTvfm3bpYr7I/0PmP1en/ADFIy06zFZy3171teMT9pTngT+ex3sofGqRbW36xq/7+n8IEp4E/n8d7KHxqkV4iRnhNfYirNf8AkpzXmtsX8U17i0ebZW3kV936FRWvHCvOGSYehF8pV7vz2wdvjf3Et0vqvLdTdp+TN/zaju3R2+te3t6M5PFfJK2caWc8JFynRmqiiusopNSS8eTbt37Tnp8t4y7NWd2lO1pcFsNTpaWnXj60687vyikkvi/4md/VWj8t1ROnPMHNOmpJODSupWve6d+n3srLhprjB6dwtTAZpu7OUt8ZxW6zaSaa62dk1bzMuseJGOzDHwp6XnUpwimr7Vuqzk1a0Wm+XRd7bfI0tp3nUmY/bGurpxpRE/pzOKGWUcmzfD5dhXJwp4WKi5O7t2lR+HmXDoqnCno/A9mkr4ai+XLnKnFt+9tv3lN8SqeNpZhhIZrJyrLB0+0bt67lNvpy5Pl7i59G/Q/A/VaH4cRqfRBoY4tlJ6pV+JVVP/2qfxiXzmsFLK60ZK6dOfL+FlDao/WXV+t0/jEvvM/0bV/dz/ysjV6VT4frf3UZwghGetKe9XtSqNeTt/yyy+LMU9DV93dKl+JErbg99NIfuqnwRZfFj6C1/wBql+JEnU8yFNHyLflGuBX5nGftUvhItUqrgV+Zxn7VL4SLVKa31y6PDeXAADJuAAAAAAAA52e5JgM/wXyPNIboblKybi1JdOad+9/aY9P6eyzTuHlh8qhsjKW53lKTbsl1k79EdUE5nGFdsZzjm08zyzBZrg5YTMaaqQl1jL/TwfmiK0+F2l4Vu0dOo1f1XUlb+v3k2Ai0x0lFtOtucwiOP4b6Yx2JderRcW7coTlBKySVknZckjd1DozJNQzVXMKb3pWVSMnGVl4v+170yQgnfbucKnZDcBw101g1L5qU24tXqTbspKzsuifna5lw/DrTmGoVaNKnO1WKjP5ybvFSU138ucUS0DfbujhU7OHpvSmU6blUllUZRdRR3bpSlfZe3V8vWZ86j0jk2o5RqZnTbnFWU4txlbwuuq8n5neBG6c5ytsrjGOThaY0rlemVUWWKS7TbucpOV9t7denVncfNHoEzM9U1rFYxCKZvw+03muJeJrUXCcndunJwu/NLlfzsZ8h0RkGRVvlGCo3qLpObc2vZflH3JEkBO62MZV4dM5wjuoNF5LqHGrGZnCTmoqKanKPopt9E/Fs7WAwdHAYGngsMrQpwjCKbvaMEkub68kjYBGZmMJisROYhF8ZoLIMbmzzSvCbqOam32kktytble3ciSVaUa1KVKfSSafsasZAJmZIrEdIRnItDZFkOPWOy2ElNRcbucpcpdeTZ186ynCZ5l0svzBNwk1dJuL9F3XNeaN8DdOckUrEYiHF05pfK9NxnHKoyj2lt26Tlfbe3Xp1Z2gBMzPVMRERiAAEJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/9k=" alt="VaultRE" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/vaultre.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🏠</span>
@@ -725,7 +811,7 @@
                     </div>
 
                     <!-- LockedOn -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="LockedOn – Real Estate CRM">
+                    <div class="electric-border text-center p-4" aria-label="LockedOn – Real Estate CRM">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBWMPLJd266pLve78Gw8vZBDl7WBS6X5v2_yjtxp_eyn94T71no7sFL1e7va1CDsEaZS8&usqp=CAU" alt="LockedOn" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/lockedon.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🔒</span>
@@ -741,7 +827,7 @@
                 <h3 class="text-xl font-semibold text-text-primary mb-6">Identity & Security</h3>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     <!-- ID4ME -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="ID4ME – Identity & Access">
+                    <div class="electric-border text-center p-4" aria-label="ID4ME – Identity & Access">
                         <img src="data:image/png;base64,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" alt="ID4ME" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/id4me.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🔐</span>
@@ -757,7 +843,7 @@
                 <h3 class="text-xl font-semibold text-text-primary mb-6">Other Tools</h3>
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     <!-- WHMCS -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="WHMCS – Hosting Management & Billing">
+                    <div class="electric-border text-center p-4" aria-label="WHMCS – Hosting Management & Billing">
                         <img src="https://images.seeklogo.com/logo-png/42/1/whmcs-logo-png_seeklogo-424722.png" alt="WHMCS" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/whmcs.svg'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">💻</span>
@@ -767,7 +853,7 @@
                     </div>
 
                     <!-- GorillaDesk -->
-                    <div class="card text-center group hover:shadow-glow transition-all duration-300 p-4" aria-label="GorillaDesk – Invoicing & Billing">
+                    <div class="electric-border text-center p-4" aria-label="GorillaDesk – Invoicing & Billing">
                         <img src="data:image/png;base64,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" alt="GorillaDesk" class="w-12 h-12 mx-auto mb-3 object-contain" loading="lazy" onerror="this.src='https://brandfetch.com/gorilladesk.com?view=library&library=default&collection=logos&asset=idPA9dQ_p6'; this.onerror=this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                         <div class="h-12 w-12 mx-auto mb-3 rounded bg-slate-800 border border-slate-700/50 flex items-center justify-center" style="display: none;">
                             <span class="text-xs text-text-secondary font-bold">🦍</span>
@@ -910,6 +996,27 @@
     </div>
 
     <script>
+        // Apply electric border effect to all electric-border cards
+        function applyElectricBorderEffect() {
+            const electricBorders = document.querySelectorAll('.electric-border');
+            
+            electricBorders.forEach((box) => {
+                // Skip if already has electric-border-inner wrapper
+                if (box.querySelector('.electric-border-inner')) return;
+                
+                // Wrap content in electric-border-inner div
+                const content = box.innerHTML;
+                box.innerHTML = `<div class="electric-border-inner">${content}</div>`;
+            });
+            
+            console.log(`Electric border effect applied to ${electricBorders.length} boxes`);
+        }
+
+        // Apply electric border effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            applyElectricBorderEffect();
+        });
+
         // Enhanced Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');

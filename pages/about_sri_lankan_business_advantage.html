@@ -10,6 +10,77 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <style>
+        /* Glow Effect for Specific Boxes */
+        .glow-box {
+            position: relative;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(45deg, #7df9ff, #3B82F6, #10B981, #7df9ff);
+            background-size: 400% 400%;
+            animation: smoothGlow 3s ease-in-out infinite;
+            will-change: transform, background-position;
+            backface-visibility: hidden;
+        }
+
+        .glow-box .glow-content {
+            position: relative;
+            background: #1E293B;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 
+                0 0 20px rgba(125, 249, 255, 0.3),
+                0 0 40px rgba(125, 249, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover effects */
+        .glow-box:hover {
+            animation-duration: 1.5s;
+            opacity: 1;
+            transform: translateY(-2px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .glow-box:hover .glow-content {
+            box-shadow: 
+                0 0 30px rgba(125, 249, 255, 0.5),
+                0 0 60px rgba(125, 249, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes smoothGlow {
+            0%, 100% {
+                background-position: 0% 50%;
+                opacity: 0.8;
+            }
+            25% {
+                background-position: 100% 50%;
+                opacity: 0.9;
+            }
+            50% {
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+            75% {
+                background-position: 0% 50%;
+                opacity: 0.9;
+            }
+        }
+
+        /* Responsive adjustments for glow boxes */
+        @media (max-width: 768px) {
+            .glow-box {
+                padding: 1px;
+            }
+            
+            .glow-box .glow-content {
+                padding: 10px;
+            }
+        }
+    </style>
+    
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftechsheqb1662back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
 <body class="bg-background text-text-primary">
@@ -186,7 +257,7 @@
 
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <div class="card">
+                    <div class="glow-box">
                         <h3 class="text-2xl font-bold mb-4 text-primary">The Vision</h3>
                         <p class="text-text-secondary mb-4">
                             TECHSHEQ was born from a simple yet powerful idea: what if geographical boundaries didn't limit business potential? Our founders recognised Sri Lanka's unique position as a strategic bridge between East and West, offering unparalleled time-zone alignment with global markets.
@@ -196,7 +267,7 @@
                         </p>
                     </div>
 
-                    <div class="card">
+                    <div class="glow-box">
                         <h3 class="text-2xl font-bold mb-4 text-accent">Cultural Fluency Advantage</h3>
                         <p class="text-text-secondary mb-4">
                             Our team's native English proficiency and deep understanding of Western business practices create a seamless extension of your operations. We don't just provide services—we become an integral part of your business ecosystem.
@@ -237,7 +308,8 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Educational Excellence -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
+                    <div class="glow-content">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
@@ -248,10 +320,12 @@
                         Sri Lanka boasts a 92% literacy rate and a robust higher education system producing skilled professionals in technology and business.
                     </p>
                     <div class="text-primary font-semibold text-sm">92% Literacy Rate</div>
+                    </div>
                 </div>
 
                 <!-- Technology Infrastructure -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
+                    <div class="glow-content">
                     <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
@@ -262,10 +336,12 @@
                         State-of-the-art telecommunications infrastructure with multiple submarine cable connections ensuring reliable global connectivity.
                     </p>
                     <div class="text-accent font-semibold text-sm">99.9% Uptime</div>
+                    </div>
                 </div>
 
                 <!-- Business Environment -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
+                    <div class="glow-content">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-8a2 2 0 00-2 2v2m12 0H4m12 0a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2"/>
@@ -276,10 +352,12 @@
                         Government initiatives supporting IT and business process outsourcing with attractive incentives and regulatory frameworks.
                     </p>
                     <div class="text-primary font-semibold text-sm">Government Backed</div>
+                    </div>
                 </div>
 
                 <!-- Time Zone Advantage -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
+                    <div class="glow-content">
                     <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10"/>
@@ -291,10 +369,12 @@
                         UTC +5:30 provides optimal overlap with US, UK, and Australian business hours, enabling real-time collaboration.
                     </p>
                     <div class="text-accent font-semibold text-sm">Global Coverage</div>
+                    </div>
                 </div>
 
                 <!-- Cost Effectiveness -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
+                    <div class="glow-content">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
@@ -305,10 +385,12 @@
                         Competitive operational costs without compromising on quality, delivering up to 60% savings compared to onshore alternatives.
                     </p>
                     <div class="text-primary font-semibold text-sm">Up to 60% Savings</div>
+                    </div>
                 </div>
 
                 <!-- Cultural Compatibility -->
-                <div class="card group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box">
+                    <div class="glow-content">
                     <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -319,6 +401,7 @@
                         Strong cultural affinity with Western business practices, ensuring seamless integration with your existing operations.
                     </p>
                     <div class="text-accent font-semibold text-sm">Native English</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -336,7 +419,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Excellence -->
-                <div class="card group cursor-pointer transition-all duration-300 hover:shadow-glow" onclick="toggleValueCard(this)">
+                <div class="glow-box cursor-pointer" onclick="toggleValueCard(this)">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,7 +440,7 @@
                 </div>
 
                 <!-- Transparency -->
-                <div class="card group cursor-pointer transition-all duration-300 hover:shadow-glow" onclick="toggleValueCard(this)">
+                <div class="glow-box cursor-pointer" onclick="toggleValueCard(this)">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -379,7 +462,7 @@
                 </div>
 
                 <!-- Innovation -->
-                <div class="card group cursor-pointer transition-all duration-300 hover:shadow-glow" onclick="toggleValueCard(this)">
+                <div class="glow-box cursor-pointer" onclick="toggleValueCard(this)">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,7 +483,7 @@
                 </div>
 
                 <!-- Partnership -->
-                <div class="card group cursor-pointer transition-all duration-300 hover:shadow-glow" onclick="toggleValueCard(this)">
+                <div class="glow-box cursor-pointer" onclick="toggleValueCard(this)">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -507,7 +590,7 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Security & Protection -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box text-center">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -534,7 +617,7 @@
                 </div>
 
                 <!-- Quality Assurance -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box text-center">
                     <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -561,7 +644,7 @@
                 </div>
 
                 <!-- Business Continuity -->
-                <div class="card text-center group hover:shadow-glow transition-all duration-300">
+                <div class="glow-box text-center">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
@@ -771,6 +854,27 @@
     </div>
 
     <script>
+        // Apply glow effect to all glow-box cards
+        function applyGlowEffect() {
+            const glowBoxes = document.querySelectorAll('.glow-box');
+            
+            glowBoxes.forEach((box) => {
+                // Skip if already has glow-content wrapper
+                if (box.querySelector('.glow-content')) return;
+                
+                // Wrap content in glow-content div
+                const content = box.innerHTML;
+                box.innerHTML = `<div class="glow-content">${content}</div>`;
+            });
+            
+            console.log(`Glow effect applied to ${glowBoxes.length} boxes`);
+        }
+
+        // Apply glow effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            applyGlowEffect();
+        });
+
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
